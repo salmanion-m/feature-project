@@ -12,19 +12,22 @@ import {RouterModule} from "@angular/router";
 
 
 @NgModule({
-  declarations: [
-    LayoutComponent,
-    SidebarComponent,
-    TableComponent,
-    FilterTableComponent
-  ],
-  imports: [
-    CommonModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    MatIconModule,
-    RouterModule
-  ]
+    declarations: [
+        LayoutComponent,
+        SidebarComponent,
+        TableComponent,
+        FilterTableComponent
+    ],
+    exports: [
+        LayoutComponent
+    ],
+    imports: [
+        CommonModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatListModule,
+        MatIconModule,
+        RouterModule
+    ]
 })
 export class ShareModule { }
