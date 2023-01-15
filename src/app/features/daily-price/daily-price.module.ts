@@ -5,6 +5,10 @@ import { DailyPriceRoutingModule } from './daily-price-routing.module';
 import {ContainerComponent, DailyPriceComponent} from "./components";
 import {FilterDailyPriceComponent} from "./components/daily-price";
 import {ShareModule} from "../../share/share.module";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 
 
@@ -14,10 +18,14 @@ import {ShareModule} from "../../share/share.module";
     DailyPriceComponent,
     FilterDailyPriceComponent
   ],
-    imports: [
-        CommonModule,
-        DailyPriceRoutingModule,
-        ShareModule
-    ]
+  imports: [
+    CommonModule,
+    DailyPriceRoutingModule,
+    ShareModule,
+    MatTableModule,
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
+  ]
 })
 export class DailyPriceModule { }
