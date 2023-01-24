@@ -1,12 +1,12 @@
 export class FilterDailyPrice {
   insCode: number ;
-  FromDate: number ;
-  ToDate: number ;
+  FromD: string ;
+  ToD: string ;
 
   constructor(json: any = null) {
     this.insCode = json && json['insCode'];
-    this.FromDate = json && json['FromDate'];
-    this.ToDate = json && json['ToDate'];
+    this.FromD = json && json['FromD'];
+    this.ToD = json && json['ToD'];
   }
 
   static fromJson(json: any) {
