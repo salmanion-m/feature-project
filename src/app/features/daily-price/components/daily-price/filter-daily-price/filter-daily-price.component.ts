@@ -13,22 +13,10 @@ import {IDatePickerConfig} from "ng2-jalali-date-picker";
 })
 export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyPrice> implements OnInit {
 
-  // dateObject = moment('1401-10-10','jYYYY,jMM,jDD');
-  // dateObject;
-
-
-  // filter: FilterDailyPrice = new FilterDailyPrice();
   today: any;
   fromDate: any;
   toDate: any;
   persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g];
-
-  // datePickerConfig:any= {
-  //   opens: 'left',
-  //   drop: 'up',
-  //   format: 'jYYYY/jMM/jDD',
-  //   disabled: true
-  // };
 
   datePickerConfig: IDatePickerConfig = {
     drops: 'down',
@@ -40,17 +28,11 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
   constructor(private fb: FormBuilder,
               private dailyService: DailyPriceService) {
     super();
-    // this.datePickerConfig = {
-    //   drop: 'up',
-    //   format: 'jYYYY/jMM/jDD',
-    //   disabled: true
-    // };
   }
 
   override ngOnInit(): void {
     super.ngOnInit();
     this._getCurrentDate();
-    // dateObject = moment('1401-10-10','jYYYY,jMM,jDD');
   }
 
   protected override _createForm() {
@@ -58,19 +40,6 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
       insCode: new FormControl('49613772749166261'),
       FromD: new FormControl(),
       ToD: new FormControl(),
-
-      // FromDate: new FormControl(),
-      // ToDate: new FormControl(),
-
-      // FromDate:new FormControl('20091010'),
-      // ToDate:new FormControl('20221010'),
-
-      // insCode:new FormControl(49613772749166261),
-      // FromDate:new FormControl(20091010),
-      // ToDate:new FormControl(20221010),
-      // ToDate: new FormControl(this.dateObject),
-
-
     })
   }
 
@@ -79,28 +48,12 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
   }
 
   override applyFilter() {
-    // this.filter = this.form.value;
-
     let filters: FilterDailyPrice = new FilterDailyPrice();
     filters = this.form.value;
-    // if(this.form.controls['FromDate'].value){
-    //   let fromdate = moment(this.form.controls['FromDate'].value).format('jYYYYMMDD');
-    //   filters.FromDate = +fromdate
-    // };
-    // if(this.form.controls['ToDate'].value){
-    //   let todate = moment(this.form.controls['ToDate'].value).format('jYYYYMMDD');
-    //   filters.ToDate = +todate
-    // }
-
-
     filters.FromD = moment(this.form.controls['FromD'].value).format('jYYYY/MM/DD');
     filters.ToD = moment(this.form.controls['ToD'].value).format('jYYYY/MM/DD');
     super.applyFilter(filters);
-    // super.applyFilter(this.filter);
     console.log('filters', filters)
-    // console.log('this.',this.form.value)
-    // console.log('fromdate',filters.FromDate)
-    // console.log('todate', filters.ToDate)
   }
 
 
