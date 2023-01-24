@@ -28,11 +28,11 @@
       <td mat-cell *matCellDef="let data">{{data.pclosing}}</td>
     </ng-container>
 
-    <!--    &lt;!&ndash; instituteType Column &ndash;&gt;-->
-    <!--    <ng-container matColumnDef="instituteType">-->
-    <!--      <th mat-header-cell *matHeaderCellDef>نوع موسسه</th>-->
-    <!--      <td mat-cell *matCellDef="let data">{{data.i.instituteType}}</td>-->
-    <!--    </ng-container>-->
+        <!-- shamsidate Column -->
+        <ng-container matColumnDef="shamsidate">
+          <th mat-header-cell *matHeaderCellDef>تاریخ</th>
+          <td mat-cell *matCellDef="let data">{{data.shamsidate}}</td>
+        </ng-container>
 
     <!--    &lt;!&ndash; instituteKind Column &ndash;&gt;-->
     <!--    <ng-container matColumnDef="instituteKind" >-->
@@ -59,4 +59,31 @@
 
   <mat-paginator class="mat-mdc-paginator p"  #paginator [length]="list.length" [pageSize]="10" [pageSizeOptions]="[5,10,50,100]" [showFirstLastButtons]="true">
   </mat-paginator>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+  <div>
+    <section>
+      <div class="example-button-row">
+        <button mat-flat-button color="primary" (click)="showCharts()">showChart</button>
+      </div>
+    </section>
+    <div *ngIf="chart">
+    <mat-divider></mat-divider>
+<!--      <app-chart-daily [itemofchart]=""></app-chart-daily>-->
+<!--      <app-chart-daily [dataChart]="newData" [namechart]="newName"></app-chart-daily>-->
+<!--      <app-chart-daily [itemofname]="nameChart" ></app-chart-daily>-->
+<!--      <app-chart-daily [itemofname]="nameChart" [itemofdata]="dataChart"></app-chart-daily>-->
+<!--      <app-chart-daily [name]="nameChart" [data]="dataChart"></app-chart-daily>-->
+<!--      <app-chart-daily></app-chart-daily>-->
+      <app-line-chart-daily-price [dataChart]="newData" [namechart]="newName"></app-line-chart-daily-price>
+    </div>
+
+  </div>
+
+
+
 </div>

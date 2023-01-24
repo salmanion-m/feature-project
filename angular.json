@@ -31,7 +31,9 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@angular/cdk/overlay-prebuilt.css"
+
             ],
             "scripts": []
           },
@@ -77,7 +79,10 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project-feature:build"
+            "browserTarget": "project-feature:build",
+            "allowedCommonJsDependencies": [
+              "lodash"
+            ]
           }
         },
         "test": {

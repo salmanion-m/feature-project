@@ -13,3 +13,17 @@
   height: 2rem;
   width: 4rem;
 }
+
+dp-date-picker {
+  width: 15% !important;
+  height: 3rem !important;
+
+  &::ng-deep {
+    .dp-picker-input {
+      padding: 15px 5px;
+      border-radius: 6px;
+      border: 1px solid #00524854 !important;
+      width: 100% !important;
+    }
+  }
+}

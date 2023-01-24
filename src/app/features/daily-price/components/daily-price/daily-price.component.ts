@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {DailyPrice, FilterDailyPrice} from "../../models";
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Charofchart, DailyPrice, FilterDailyPrice} from "../../models";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {FormBuilder} from "@angular/forms";
@@ -11,14 +11,22 @@ import {DailyPriceService} from "../../services";
   templateUrl: './daily-price.component.html',
   styleUrls: ['./daily-price.component.scss']
 })
-export class DailyPriceComponent implements OnInit{
+export class DailyPriceComponent implements OnInit {
 
   filter: FilterDailyPrice = new FilterDailyPrice();
   list: DailyPrice[] = [];
   dataSource = new MatTableDataSource<DailyPrice>;
-  displayedColumn: string[] = ['index', 'insCode', 'deven', 'pclosing'];
+  displayedColumn: string[] = ['index', 'insCode', 'deven', 'pclosing', 'shamsidate'];
+
+  chart: boolean = false;
+  newData: number[] = [];
+  newName: string[] = [];
+
+  item: Charofchart[] =[]
+
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+
 
   constructor(protected fb: FormBuilder,
               protected router: Router,
@@ -27,7 +35,6 @@ export class DailyPriceComponent implements OnInit{
 
   ngOnInit(): void {
 
-    // this._getDailyPrice();
   }
 
 
@@ -37,12 +44,27 @@ export class DailyPriceComponent implements OnInit{
   }
 
   private _getDailyPrice(): void {
-    this.dailyService.getDailyPriceList(this.filter).subscribe((result) => {
+    this.dailyService.getDailyPriceList(this.filter).subscribe((result: DailyPrice[]) => {
       this.list = result;
-      // console.log('::::>>>>',this.list);
+      console.log('::::>>>>', this.list);
+      this.list.forEach((item => {
+        this.newData.push(item.pdrCotVal);
+        this.newName.push(String(item.shamsidate));
+      }));
+      // console.log('newData', this.newData)
+      // console.log('newName', this.newName)
       this.dataSource = new MatTableDataSource(this.list);
       this.dataSource.paginator = this.paginator;
     })
   }
+
+  showCharts() {
+    if (this.chart === false) {
+      this.chart = true;
+    } else {
+      this.chart = false
+    }
+  }
+
 
 }

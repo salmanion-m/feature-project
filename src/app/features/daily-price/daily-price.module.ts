@@ -1,25 +1,36 @@
-import { NgModule } from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DailyPriceRoutingModule } from './daily-price-routing.module';
-import {ContainerComponent, DailyPriceComponent} from "./components";
+import {ChartDailyComponent, ContainerComponent, DailyPriceComponent} from "./components";
 import {FilterDailyPriceComponent} from "./components/daily-price";
 import {ShareModule} from "../../share/share.module";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
-import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {ReactiveFormsModule} from "@angular/forms";
+import {DpDatePickerModule} from "ng2-jalali-date-picker";
+import {HighchartsChartModule} from "highcharts-angular";
+import {MatDividerModule} from "@angular/material/divider";
+import { LineChartDailyPriceComponent } from './components/line-chart-daily-price/line-chart-daily-price.component';
 
 
 
+
+
+// @ts-ignore
 @NgModule({
   declarations: [
     ContainerComponent,
     DailyPriceComponent,
-    FilterDailyPriceComponent
+    FilterDailyPriceComponent,
+    ChartDailyComponent,
+    LineChartDailyPriceComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +43,15 @@ import {MatIconModule} from "@angular/material/icon";
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-  ]
+    MatDatepickerModule,
+    MatNativeDateModule,
+    DpDatePickerModule,
+    HighchartsChartModule,
+    MatDividerModule
+  ],
+  schemas: [ NO_ERRORS_SCHEMA  ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'fa-IR'},
+  ],
 })
 export class DailyPriceModule { }
