@@ -1,16 +1,31 @@
+<!--&lt;!&ndash;<app-header flexLayout="column"></app-header>&ndash;&gt;-->
+<!--<div flexLayout="row" >-->
+<!--  <div fxFlex="20">-->
+<!--    <app-sidebar ></app-sidebar>-->
+<!--  </div>-->
 
-<!--<app-header flexLayout="column"></app-header>-->
-<div flexLayout="row" >
-  <div fxFlex="20">
-    <app-sidebar ></app-sidebar>
-  </div>
+<!--  <div fxFlexAlign="center" class="content">-->
+<!--&lt;!&ndash;    <mat-card>&ndash;&gt;-->
+<!--      <router-outlet></router-outlet>-->
+<!--&lt;!&ndash;    </mat-card>&ndash;&gt;-->
+<!--  </div>-->
+<!--</div>-->
+<!--&lt;!&ndash;<app-footer flexLayout="column"></app-footer>&ndash;&gt;-->
 
-  <div fxFlexAlign="center" class="content">
-<!--    <mat-card>-->
+
+<div >
+  <app-header (menuToggled)="toggle()"></app-header>
+
+  <mat-drawer-container>
+
+    <mat-drawer mode="side"  [opened]="opened" >
+      <app-main-sidebar [menu]="menu"></app-main-sidebar>
+    </mat-drawer>
+
+    <mat-drawer-content [class.margin-left]="opened">
       <router-outlet></router-outlet>
-<!--    </mat-card>-->
-  </div>
-</div>
-<!--<app-footer flexLayout="column"></app-footer>-->
+    </mat-drawer-content>
 
+  </mat-drawer-container>
+</div>
 
