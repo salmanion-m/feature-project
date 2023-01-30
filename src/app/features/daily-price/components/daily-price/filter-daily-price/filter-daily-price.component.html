@@ -6,8 +6,25 @@
 <!--</div>-->
 <div class="container">
   <form [formGroup]="form" (ngSubmit)="applyFilter()">
-    <mat-form-field>
-      <input matInput autofocus formControlName="insCode" placeholder="insCode">
+
+<!--    <mat-form-field class="test" appearance="outline" style="color: red; border: 1px dashed currentcolor;"  >-->
+    <mat-form-field class="test" appearance="outline"  >
+      <input  matInput  formControlName="insCode" placeholder="insCode" >
+    </mat-form-field>
+<br>
+<br>
+<br>
+    <mat-form-field color="accent" appearance="outline"  >
+      <input  matInput  formControlName="insCode" placeholder="insCode" >
+    </mat-form-field>
+<br>
+    <mat-form-field appearance="outline" [color]="colorControl.value!">
+      <mat-label>Color</mat-label>
+      <mat-select [formControl]="colorControl">
+        <mat-option value="primary">Primary</mat-option>
+        <mat-option value="accent">Accent</mat-option>
+        <mat-option value="warn">Warn</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
 <!--    <mat-form-field appearance="fill">-->

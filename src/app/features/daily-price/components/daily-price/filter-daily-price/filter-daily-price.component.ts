@@ -1,17 +1,22 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FilterTableComponent} from "../../../../../share";
 import {FilterDailyPrice} from "../../../models";
 import {FormBuilder, FormControl} from "@angular/forms";
 import {DailyPriceService} from "../../../services";
 import * as moment from 'jalali-moment';
 import {IDatePickerConfig} from "ng2-jalali-date-picker";
+import {ThemePalette} from "@angular/material/core";
 
 @Component({
   selector: 'app-filter-daily-price',
   templateUrl: './filter-daily-price.component.html',
-  styleUrls: ['./filter-daily-price.component.scss']
+  styleUrls: ['filter-daily-price.component.scss'],
 })
 export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyPrice> implements OnInit {
+
+
+  colorControl = new FormControl('warn' as ThemePalette);
+
 
   today: any;
   fromDate: any;
@@ -24,6 +29,7 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
     opens: 'left',
     showTwentyFourHours: true
   };
+  transactionNumber: any;
 
   constructor(private fb: FormBuilder,
               private dailyService: DailyPriceService) {
