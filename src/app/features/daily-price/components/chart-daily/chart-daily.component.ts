@@ -25,7 +25,7 @@ export class ChartDailyComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // this.chart = Highcharts.chart(this.chartOption)
+    this.chart = Highcharts.chart(this.chartOption)
   }
 
 
