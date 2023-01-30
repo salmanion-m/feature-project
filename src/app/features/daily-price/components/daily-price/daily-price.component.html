@@ -65,25 +65,19 @@
 <br>
 <br>
 <br>
-  <div>
-    <section>
-      <div class="example-button-row">
-        <button mat-flat-button color="primary" (click)="showCharts()">showChart</button>
-      </div>
-    </section>
-    <div *ngIf="chart">
+<!--  <div>-->
+<!--    <section>-->
+<!--      <div class="example-button-row">-->
+<!--        <button mat-flat-button color="primary" (click)="showCharts()">showChart</button>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--    <div *ngIf="chart">-->
 <!--    <mat-divider></mat-divider>-->
-<!--      <app-chart-daily [itemofchart]=""></app-chart-daily>-->
-<!--      <app-chart-daily [dataChart]="newData" [namechart]="newName"></app-chart-daily>-->
-<!--      <app-chart-daily [itemofname]="nameChart" ></app-chart-daily>-->
-<!--      <app-chart-daily [itemofname]="nameChart" [itemofdata]="dataChart"></app-chart-daily>-->
-<!--      <app-chart-daily [name]="nameChart" [data]="dataChart"></app-chart-daily>-->
-<!--      <app-chart-daily></app-chart-daily>-->
-      <app-line-chart-daily-price [dataChart]="newData" [namechart]="newName"></app-line-chart-daily-price>
-    </div>
+<!--      <app-line-chart-daily-price [dataChart]="newData" [namechart]="newName"></app-line-chart-daily-price>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  </div>
-
-
+  <mat-divider></mat-divider>
+  <app-line-chart-daily-price *ngIf="chart" [dataChart]="newData" [namechart]="newName"></app-line-chart-daily-price>
 
 </div>

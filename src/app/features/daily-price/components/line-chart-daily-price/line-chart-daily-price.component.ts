@@ -37,6 +37,8 @@ export class LineChartDailyPriceComponent implements OnInit , AfterViewInit, OnC
 
 
   ngOnInit(){
+    console.log('this.newData2',this.dataChart)
+    console.log('this.newName2',this.namechart)
 
   }
 

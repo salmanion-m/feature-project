@@ -56,8 +56,8 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
   override applyFilter() {
     let filters: FilterDailyPrice = new FilterDailyPrice();
     filters = this.form.value;
-    filters.FromD = moment(this.form.controls['FromD'].value).format('jYYYY/MM/DD');
-    filters.ToD = moment(this.form.controls['ToD'].value).format('jYYYY/MM/DD');
+    filters.FromD = moment(this.form.controls['FromD'].value).format('jYYYY/jMM/jDD');
+    filters.ToD = moment(this.form.controls['ToD'].value).format('jYYYY/jMM/jDD');
     super.applyFilter(filters);
     console.log('filters', filters)
   }

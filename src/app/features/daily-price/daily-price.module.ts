@@ -2,7 +2,7 @@ import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DailyPriceRoutingModule } from './daily-price-routing.module';
-import {ChartDailyComponent, ContainerComponent, DailyPriceComponent} from "./components";
+import { ContainerComponent, DailyPriceComponent, LineChartDailyPriceComponent} from "./components";
 import {FilterDailyPriceComponent} from "./components/daily-price";
 import {ShareModule} from "../../share/share.module";
 import {MatTableModule} from "@angular/material/table";
@@ -17,7 +17,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DpDatePickerModule} from "ng2-jalali-date-picker";
 import {HighchartsChartModule} from "highcharts-angular";
 import {MatDividerModule} from "@angular/material/divider";
-import { LineChartDailyPriceComponent } from './components/line-chart-daily-price/line-chart-daily-price.component';
 import {FundModule} from "../fund/fund.module";
 import {MatSelectModule} from "@angular/material/select";
 
@@ -31,7 +30,6 @@ import {MatSelectModule} from "@angular/material/select";
     ContainerComponent,
     DailyPriceComponent,
     FilterDailyPriceComponent,
-    ChartDailyComponent,
     LineChartDailyPriceComponent,
   ],
     imports: [

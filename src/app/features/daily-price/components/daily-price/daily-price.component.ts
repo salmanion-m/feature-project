@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
 import {Charofchart, DailyPrice, FilterDailyPrice} from "../../models";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
@@ -11,7 +11,7 @@ import {DailyPriceService} from "../../services";
   templateUrl: './daily-price.component.html',
   styleUrls: ['./daily-price.component.scss']
 })
-export class DailyPriceComponent implements OnInit {
+export class DailyPriceComponent implements OnInit  {
 
   filter: FilterDailyPrice = new FilterDailyPrice();
   list: DailyPrice[] = [];
@@ -34,12 +34,19 @@ export class DailyPriceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
 
   onApplyFilter(filters: any): void {
     this.filter = FilterDailyPrice.fromJson(filters);
+    this.chart = false;
+    if(this.newData.values()&& this.newName.values()){
+      // this.newData.length = 0;
+      // this.newName.length = 0;
+      this.newName = [];
+      this.newData = [];
+
+    }
     this._getDailyPrice();
   }
 
@@ -51,20 +58,22 @@ export class DailyPriceComponent implements OnInit {
         this.newData.push(item.pdrCotVal);
         this.newName.push(String(item.shamsidate));
       }));
-      // console.log('newData', this.newData)
-      // console.log('newName', this.newName)
+      console.log('newData', this.newData)
+      console.log('newName', this.newName)
       this.dataSource = new MatTableDataSource(this.list);
       this.dataSource.paginator = this.paginator;
+      // this.showCharts();
+      this.chart = true
     })
   }
 
-  showCharts() {
-    if (this.chart === false) {
-      this.chart = true;
-    } else {
-      this.chart = false
-    }
-  }
+  // showCharts() {
+  //   if (this.chart === false) {
+  //     this.chart = true;
+  //   } else {
+  //     this.chart = false
+  //   }
+  // }
 
 
 }
