@@ -1,14 +1,18 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import {FilterTableComponent, HeaderComponent, MainSidebarComponent, SidebarComponent} from "./components";
 import {LayoutComponent} from "./components/layout/layout.component";
-import {FilterTableComponent, SidebarComponent} from "./components";
 import {TableComponent} from "./components/table/table.component";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {RouterModule} from "@angular/router";
+import {MatCardModule} from "@angular/material/card";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatLineModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -16,18 +20,27 @@ import {RouterModule} from "@angular/router";
         LayoutComponent,
         SidebarComponent,
         TableComponent,
-        FilterTableComponent
+        FilterTableComponent,
+        HeaderComponent,
+        MainSidebarComponent
     ],
     exports: [
-        LayoutComponent
+        LayoutComponent,
+        HeaderComponent,
+        MainSidebarComponent
     ],
-    imports: [
-        CommonModule,
-        MatSidenavModule,
-        MatToolbarModule,
-        MatListModule,
-        MatIconModule,
-        RouterModule
-    ]
+  imports: [
+    CommonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatIconModule,
+    RouterModule,
+    MatCardModule,
+    MatMenuModule,
+    MatExpansionModule,
+    MatLineModule
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class ShareModule { }
