@@ -1,17 +1,11 @@
-<!--<div class="container">-->
-<!--  <mat-form-field appearance="outline" class="example-form-field">-->
-<!--    <mat-label>فیلتر</mat-label>-->
-<!--    <input  matInput [formControl]="insCode" placeholder="فیلتر" search (keyup)="onApplyFilter($event)">-->
-<!--  </mat-form-field>-->
-<!--</div>-->
-<div class="container">
+
+<div class="container-fluid">
   <form [formGroup]="form" (ngSubmit)="applyFilter()">
 
 <!--    <mat-form-field class="test" appearance="outline" style="color: red; border: 1px dashed currentcolor;"  >-->
     <mat-form-field class="test" appearance="outline"  >
       <input  matInput  formControlName="insCode" placeholder="insCode" >
     </mat-form-field>
-<br>
 <!--<br>-->
 <!--<br>-->
 <!--    <mat-form-field color="accent" appearance="outline"  >-->
@@ -36,14 +30,14 @@
 <!--        </mat-form-field>-->
 <!--        <br>-->
 <!--    <mat-form-field appearance="fill">-->
-    <dp-date-picker [config]="datePickerConfig"
+    <dp-date-picker class="dbinput" [config]="datePickerConfig"
                         dir="rtl"
                         formControlName="FromD"
                         placeholder="از"
                         theme="dp-material">
         </dp-date-picker>
-        <br>
-          <dp-date-picker [config]="datePickerConfig"
+
+          <dp-date-picker class="margin" [config]="datePickerConfig"
                           dir="rtl"
                           formControlName="ToD"
                           placeholder="تا"
@@ -82,3 +76,8 @@
   </form>
 
 </div>
+
+
+
+
+

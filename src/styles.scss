@@ -19,8 +19,14 @@
   url('./assets/font/tanha-font-v0.9/Tanha.ttf') format('truetype');
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  direction: rtl;
+  text-align: right;
+  height: 100%;
+  font-family: Tanha;
+  overflow: auto;
+}
+body { margin: 0;}
 
 
 .container{

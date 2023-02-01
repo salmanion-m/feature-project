@@ -45,7 +45,6 @@ export class DailyPriceComponent implements OnInit  {
       // this.newName.length = 0;
       this.newName = [];
       this.newData = [];
-
     }
     this._getDailyPrice();
   }
