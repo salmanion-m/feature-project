@@ -16,6 +16,7 @@ export class IndustryTableComponent implements OnInit {
   dataSource = new MatTableDataSource<IndustryTable>;
   displayedColumn: string[] = ['index','id', 'industryName', 'industryNameEnglish', 'regDate', 'regTime'];
 
+  pageEvent={pageSize:10,pageIndex:0}
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
 

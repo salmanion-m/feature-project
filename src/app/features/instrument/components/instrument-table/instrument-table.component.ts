@@ -16,6 +16,7 @@ export class InstrumentTableComponent implements OnInit {
   dataSource = new MatTableDataSource<InstrumentTable>;
   displayedColumn: string[] = ['index','instrumentId'];
 
+  pageEvent={pageSize:10,pageIndex:0}
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private router: Router,

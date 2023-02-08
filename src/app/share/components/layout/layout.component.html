@@ -22,8 +22,11 @@
       <app-main-sidebar [menu]="menu"></app-main-sidebar>
     </mat-drawer>
 
-    <mat-drawer-content [class.margin-left]="opened">
-      <router-outlet></router-outlet>
+<!--    <mat-drawer-content >-->
+    <mat-drawer-content [class.margin-left]="opened" >
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
     </mat-drawer-content>
 
   </mat-drawer-container>

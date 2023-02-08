@@ -16,6 +16,7 @@ export class LetterTypeTableComponent implements OnInit{
   dataSource = new MatTableDataSource<LetterTypeTable>;
   displayedColumn: string[] = ['index','letterTypeId','name','publisherTypeId','letterGroupId'];
 
+  pageEvent={pageSize:10,pageIndex:0}
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private router: Router,

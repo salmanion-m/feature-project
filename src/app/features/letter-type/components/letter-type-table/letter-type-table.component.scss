@@ -1,25 +1,58 @@
 .container{
   padding: 3rem;
 }
+.receptacle{
+  padding: 2rem;
+}
+
 
 table{
   width: 100%;
 }
 
-.p{
-  padding-left: 34rem;
-  padding-right: 38rem;
+//tr.example-element-row:not(.example-expanded-row):hover {
+//  background: whitesmoke;
+//}
+
+
+//.p{
+//  padding-left: 34rem;
+//  padding-right: 38rem;
+//}
+//
+//.mat-mdc-paginator, mat-mdc-text-field-wrapper{
+//  direction: ltr;
+//  ::ng-deep .mat-mdc-text-field-wrapper {
+//    direction: rtl;
+//  }
+//  ::ng-deep .mat-mdc-paginator-range-actions{
+//    direction: rtl;
+//  }
+//  ::ng-deep .mat-mdc-paginator-range-label{
+//    direction: ltr;
+//  }
+//}
+.mat-mdc-paginator, mat-mdc-text-field-wrapper,mat-mdc-paginator-range-actions {
+  ::ng-deep .mat-mdc-paginator-range-label {
+    direction: ltr;
+    display: flow-root;
+  }
 }
 
-.mat-mdc-paginator, mat-mdc-text-field-wrapper{
-  direction: ltr;
-  ::ng-deep .mat-mdc-text-field-wrapper {
-    direction: rtl;
-  }
-  ::ng-deep .mat-mdc-paginator-range-actions{
-    direction: rtl;
-  }
-  ::ng-deep .mat-mdc-paginator-range-label{
-    direction: ltr;
-  }
-}
+//.mat-mdc-table tbody, .mat-mdc-table tfoot,
+//.mat-mdc-table thead, .mat-mdc-cell,
+//.mat-mdc-footer-cell, .mat-mdc-header-row,
+//.mat-mdc-row, .mat-mdc-footer-row,
+//.mat-mdc-table .mat-mdc-header-cell {
+////  text-align: center;
+//}
+
+//.mat-mdc-table .mat-mdc-header-cell, {
+//  background: inherit;
+//  text-align: center;
+//}
+//.mat-mdc-table .mdc-data-table__cell, {
+//  text-align: center;
+//}
+
+

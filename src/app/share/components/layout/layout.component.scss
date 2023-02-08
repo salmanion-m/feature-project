@@ -59,6 +59,10 @@
 //  padding-top: 50px;
 //}
 
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+  margin-top:5rem;
+}
+
 
 :host {
   display: flex;

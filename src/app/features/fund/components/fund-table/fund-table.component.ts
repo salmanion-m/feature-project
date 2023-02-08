@@ -16,6 +16,7 @@ export class FundTableComponent implements OnInit {
   dataSource = new MatTableDataSource<Fund>;
   displayedColumn: string[] = ['index', 'id', 'cfundId', 'instituteTypeId', 'instituteType', 'instituteKind', 'seoregisterNo', 'ceo'];
 
+  pageEvent={pageSize:10,pageIndex:0}
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private router: Router,
