@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container-fluid ">
   <form [formGroup]="form" (ngSubmit)="applyFilter()">
 
 <!--    <mat-form-field class="test" appearance="outline" style="color: red; border: 1px dashed currentcolor;"  >-->
@@ -30,14 +30,14 @@
 <!--        </mat-form-field>-->
 <!--        <br>-->
 <!--    <mat-form-field appearance="fill">-->
-    <dp-date-picker class="dbinput" [config]="datePickerConfig"
+    <dp-date-picker class="dbinput col-form-label-sm" [config]="datePickerConfig"
                         dir="rtl"
                         formControlName="FromD"
                         placeholder="از"
                         theme="dp-material">
         </dp-date-picker>
 
-          <dp-date-picker class="margin" [config]="datePickerConfig"
+          <dp-date-picker class="dbinput col-form-label" [config]="datePickerConfig"
                           dir="rtl"
                           formControlName="ToD"
                           placeholder="تا"

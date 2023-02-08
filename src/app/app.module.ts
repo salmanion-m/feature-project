@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CoreModule} from "./core/core.module";
 import {ShareModule} from "./share/share.module";
-import {DailyPriceModule} from "./features/daily-price/daily-price.module";
 import {DashbordModule} from "./features/dashbord/dashbord.module";
 import {FundModule} from "./features/fund/fund.module";
 import {IndustryModule} from "./features/industry/industry.module";
@@ -16,6 +15,7 @@ import {LetterTypeModule} from "./features/letter-type/letter-type.module";
 import {UsersModule} from "./features/users/users.module";
 import {UsersService} from "./features/users";
 import {AuthInterceptor} from "./core";
+import {DailyPriceModule} from "./features/daily-price/daily-price.module";
 
 @NgModule({
   declarations: [

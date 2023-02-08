@@ -1,17 +1,17 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
 import {Charofchart, DailyPrice, FilterDailyPrice} from "../../models";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {FormBuilder} from "@angular/forms";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {DailyPriceService} from "../../services";
 
 @Component({
   selector: 'app-daily-price',
   templateUrl: './daily-price.component.html',
-  styleUrls: ['./daily-price.component.scss']
+  styleUrls: ['./daily-price.component.scss'],
 })
-export class DailyPriceComponent implements OnInit  {
+export class DailyPriceComponent implements OnInit, AfterViewInit {
 
   filter: FilterDailyPrice = new FilterDailyPrice();
   list: DailyPrice[] = [];
@@ -24,7 +24,7 @@ export class DailyPriceComponent implements OnInit  {
 
   item: Charofchart[] =[]
 
-
+  pageEvent={pageSize:10,pageIndex:0}
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
 
@@ -33,7 +33,11 @@ export class DailyPriceComponent implements OnInit  {
               protected dailyService: DailyPriceService,) {
   }
 
+
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit() {
   }
 
 

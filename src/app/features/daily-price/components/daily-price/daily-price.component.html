@@ -3,11 +3,12 @@
 
 <div class="receptacle">
 
-  <table mat-table [dataSource]="dataSource" mat-sort class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" mat-sort class="mat-elevation-z8 table table-hover">
     <!-- index Column -->
     <ng-container matColumnDef="index" >
       <th mat-header-cell  *matHeaderCellDef  >ردیف</th>
-      <td mat-cell  *matCellDef="let data;let i = index;">{{i + 1}}</td>
+<!--      <td mat-cell  *matCellDef="let data;let i = index;">{{ i + 1 }}</td>-->
+      <td mat-cell  *matCellDef="let data;let i = index;"> {{(i+1)+(pageEvent.pageSize*pageEvent.pageIndex)}} </td>
     </ng-container>
 
     <!-- insCode Column -->
@@ -54,11 +55,15 @@
 
 
     <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumn;let i = index"></tr>
+    <tr mat-row class="example-element-row" *matRowDef="let row; columns: displayedColumn;let i = index"></tr>
   </table>
 
-  <mat-paginator class="mat-mdc-paginator p"  #paginator [length]="list.length" [pageSize]="10" [pageSizeOptions]="[5,10,50,100]" [showFirstLastButtons]="true">
-  </mat-paginator>
+<!--  <div class="pagination">-->
+    <mat-paginator class="mat-mdc-paginator p "  #paginator [length]="list.length" [pageSize]="10"
+                   [pageSizeOptions]="[5,10,50,100]" [showFirstLastButtons]="true"
+                   (page)="pageEvent = $event">
+    </mat-paginator>
+<!--  </div>-->
 
 <br>
 <br>

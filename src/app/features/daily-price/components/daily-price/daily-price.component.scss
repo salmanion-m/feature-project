@@ -1,62 +1,85 @@
 .receptacle{
-  padding: 3rem;
+  padding: 2rem;
 }
 
-table{
-  width: 100%;
-}
 
-.p{
-  padding-left: 34rem;
-  padding-right: 38rem;
-}
+//.mat-mdc-paginator, mat-mdc-text-field-wrapper{
+//  direction: ltr;
+//  display: flex;
+//  justify-content: center;
+//
+//  ::ng-deep .mat-mdc-text-field-wrapper {
+//    direction: rtl;
+//  }
+//  ::ng-deep .mat-mdc-paginator-range-actions{
+//    direction: rtl;
+//  }
+//  ::ng-deep .mat-mdc-paginator-range-label{
+//    direction: ltr;
+//  }
+//}
 
-.mat-mdc-paginator, mat-mdc-text-field-wrapper{
-  direction: ltr;
-  ::ng-deep .mat-mdc-text-field-wrapper {
-    direction: rtl;
-  }
-  ::ng-deep .mat-mdc-paginator-range-actions{
-    direction: rtl;
-  }
-  ::ng-deep .mat-mdc-paginator-range-label{
+
+.mat-mdc-paginator, mat-mdc-text-field-wrapper,mat-mdc-paginator-range-actions {
+  ::ng-deep .mat-mdc-paginator-range-label {
+    //direction: ltr;
     direction: ltr;
+    display: flow-root;
+
+    //display: flex;
+    //direction: ltr;
   }
 }
 
-.example-form-field {
-  width:20rem;
-}
+
+//.example-form-field {
+//  width:20rem;
+//}
 
 //button
-section {
-  display: table;
-}
+//section {
+//  display: table;
+//}
+//
+//.example-label {
+//  display: table-cell;
+//  font-size: 14px;
+//  margin-left: 8px;
+//  min-width: 120px;
+//}
+//
+//.example-button-row {
+//  display: table-cell;
+//  max-width: 600px;
+//}
+//
+//.example-button-row .mat-mdc-button-base {
+//  margin: 8px 8px 8px 0;
+//}
+//
+//.example-flex-container {
+//  display: flex;
+//  justify-content: space-between;
+//  flex-wrap: wrap;
+//}
+//
+//.example-button-container {
+//  display: flex;
+//  justify-content: center;
+//  width: 120px;
+//}
 
-.example-label {
-  display: table-cell;
-  font-size: 14px;
-  margin-left: 8px;
-  min-width: 120px;
-}
 
-.example-button-row {
-  display: table-cell;
-  max-width: 600px;
-}
 
-.example-button-row .mat-mdc-button-base {
-  margin: 8px 8px 8px 0;
-}
 
-.example-flex-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 
-.example-button-container {
-  display: flex;
-  justify-content: center;
-  width: 120px;
-}
+
+
+
+
+
+
+
+
+
+

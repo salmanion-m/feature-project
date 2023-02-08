@@ -3,6 +3,10 @@
   margin-top: 5rem;
 }
 
+.mat-mdc-form-field {
+  padding-left: 4px;
+}
+
 .example-button-row button,
 .example-button-row a {
   margin-right: 8px;
@@ -16,17 +20,17 @@
 }
 
 dp-date-picker {
-  width: 15% !important;
-  height: 3rem !important;
+  //width: 15% !important;
+  //height: 3rem !important;
   //&:focus,hover,{
   //  border-color: #3f51b5;
   //}
   &::ng-deep {
     .dp-picker-input {
-      padding: 15px 35px;
+      padding: 9px 14px;
       border-radius: 6px;
       border: 1px solid #00524854 !important;
-      width: 100% !important;
+      width: min-content !important;
       height: 3.6rem !important;
       //&:hover,
       &:focus {
@@ -38,17 +42,9 @@ dp-date-picker {
     }
         input {
           &:last-child {
-            //-webkit-box-sizing: border-box;
-            //box-sizing: border-box;
-            //height:45px;
-            //width: 225px;
             font-size:15px;
-            //outline: none;
-            //height: 3rem;
-            //border-radius: 10px;
-            //width: 31rem;
-            //border: 1px solid var(--grayToWhite);
-            //padding-top: 10px;
+            text-align: center;
+            margin-left: -2mm;
           }
         }
   }
