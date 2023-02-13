@@ -4,6 +4,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
 import {LetterTypeService} from "../../services";
+import {AppService} from "../../../../share";
 
 @Component({
   selector: 'app-letter-type-table',
@@ -20,10 +21,12 @@ export class LetterTypeTableComponent implements OnInit{
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private router: Router,
-              private LetterService: LetterTypeService) {
+              private LetterService: LetterTypeService,
+              private appService: AppService) {
   }
 
   ngOnInit(): void {
+    this.appService.setTitle('نوع نامه')
     this._getLetterTypeList();
   }
 

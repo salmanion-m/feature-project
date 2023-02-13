@@ -4,6 +4,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
 import {FundService} from "../../services";
+import {AppService} from "../../../../share";
 
 @Component({
   selector: 'app-fund-table',
@@ -20,10 +21,12 @@ export class FundTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private router: Router,
-              private fundService: FundService) {
+              private fundService: FundService,
+              private appService: AppService) {
   }
 
   ngOnInit(): void {
+    this.appService.setTitle('صندوق');
     this._getFund();
   }
 

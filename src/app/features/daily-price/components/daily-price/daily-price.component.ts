@@ -5,6 +5,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {FormBuilder} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DailyPriceService} from "../../services";
+import {AppService} from "../../../../share";
 
 @Component({
   selector: 'app-daily-price',
@@ -30,11 +31,13 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
 
   constructor(protected fb: FormBuilder,
               protected router: Router,
-              protected dailyService: DailyPriceService,) {
+              protected dailyService: DailyPriceService,
+              private appService : AppService) {
   }
 
 
   ngOnInit(): void {
+    this.appService.setTitle('قیمت روزانه')
   }
 
   ngAfterViewInit() {

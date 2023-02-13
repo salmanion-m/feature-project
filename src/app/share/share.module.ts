@@ -14,6 +14,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatLineModule} from "@angular/material/core";
 import {MatButtonModule} from "@angular/material/button";
+import { PageHeaderComponent } from './components/layout/page-header/page-header.component';
 
 
 @NgModule({
@@ -23,13 +24,15 @@ import {MatButtonModule} from "@angular/material/button";
         TableComponent,
         FilterTableComponent,
         HeaderComponent,
-        MainSidebarComponent
+        MainSidebarComponent,
+        PageHeaderComponent
     ],
-    exports: [
-        LayoutComponent,
-        HeaderComponent,
-        MainSidebarComponent
-    ],
+  exports: [
+    LayoutComponent,
+    HeaderComponent,
+    MainSidebarComponent,
+    PageHeaderComponent
+  ],
     imports: [
         CommonModule,
         MatSidenavModule,

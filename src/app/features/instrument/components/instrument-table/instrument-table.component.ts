@@ -4,6 +4,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
 import {InstrumentService} from "../../services";
+import {AppService} from "../../../../share";
 
 @Component({
   selector: 'app-instrument-table',
@@ -20,10 +21,12 @@ export class InstrumentTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private router: Router,
-              private intService: InstrumentService) {
+              private intService: InstrumentService,
+              private appService: AppService) {
   }
 
   ngOnInit() {
+    this.appService.setTitle('نماد')
     this._getInstList();
   }
 

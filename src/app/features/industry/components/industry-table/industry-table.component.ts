@@ -4,6 +4,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
 import {IndustryService} from "../../services";
+import {AppService} from "../../../../share";
 
 @Component({
   selector: 'app-industry-table',
@@ -21,10 +22,12 @@ export class IndustryTableComponent implements OnInit {
 
 
   constructor(private router: Router,
-              private industryService: IndustryService) {
+              private industryService: IndustryService,
+              private appService: AppService) {
   }
 
   ngOnInit(): void {
+    this.appService.setTitle('صنعت');
     this._getIndustry();
   }
 

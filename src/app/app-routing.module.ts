@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  //bayad taghir dade shavad
+  {path: '', pathMatch: 'full', redirectTo: 'dashbord/link'},
   {path: 'auth', loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule)},
   {path: 'dashbord', loadChildren: () => import('./features/dashbord/dashbord.module').then(m => m.DashbordModule)},
   {path: 'day', loadChildren: () => import('./features/daily-price/daily-price.module').then(m => m.DailyPriceModule)},

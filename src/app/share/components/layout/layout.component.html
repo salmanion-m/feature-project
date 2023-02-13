@@ -24,6 +24,16 @@
 
 <!--    <mat-drawer-content >-->
     <mat-drawer-content [class.margin-left]="opened" >
+<!--      <app-page-header icon="home">-->
+<!--        <h2>Home</h2>-->
+<!--        <button routerLink="/sales" mat-flat-button-->
+<!--          color="primary" class="action">-->
+<!--          <mat-icon class="mr-2">add</mat-icon>-->
+<!--          <span>New sale</span>-->
+<!--        </button>-->
+<!--      </app-page-header>-->
+      <app-page-header></app-page-header>
+
       <div class="container-fluid">
         <router-outlet></router-outlet>
       </div>
