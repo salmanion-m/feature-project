@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -13,13 +14,22 @@ export class HeaderComponent implements OnInit {
 
   user: string = 'Enea';
 
+  constructor(private router: Router) {
+  }
+
   ngOnInit(): void {
   }
 
   // constructor(private authService: AuthService) { }
 
-  logout(): void {
+  login(): void {
+    this.router.navigate(['/auth/login'])
     console.log('Logged out');
+  }
+
+  register(): void {
+    this.router.navigate(['/auth/register'])
+    console.log('register');
   }
 
 
