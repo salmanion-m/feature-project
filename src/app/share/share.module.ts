@@ -13,6 +13,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatLineModule} from "@angular/material/core";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -29,18 +30,19 @@ import {MatLineModule} from "@angular/material/core";
         HeaderComponent,
         MainSidebarComponent
     ],
-  imports: [
-    CommonModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    MatIconModule,
-    RouterModule,
-    MatCardModule,
-    MatMenuModule,
-    MatExpansionModule,
-    MatLineModule
-  ],
+    imports: [
+        CommonModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatListModule,
+        MatIconModule,
+        RouterModule,
+        MatCardModule,
+        MatMenuModule,
+        MatExpansionModule,
+        MatLineModule,
+        MatButtonModule
+    ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class ShareModule { }
