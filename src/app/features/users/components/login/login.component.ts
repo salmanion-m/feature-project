@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
       return
     }
     this.userService.Login(this.loginForm.value).subscribe((response: any)=> {
+      localStorage.setItem('token',response.token)
       this.router.navigate(['/dashbord/link'])
     })
   }
