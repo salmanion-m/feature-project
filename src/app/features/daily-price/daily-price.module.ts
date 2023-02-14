@@ -2,7 +2,7 @@ import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DailyPriceRoutingModule } from './daily-price-routing.module';
-import { ContainerComponent, DailyPriceComponent, LineChartDailyPriceComponent} from "./components";
+import { ContainerComponent, DailyPriceComponent, LineChartDailyPriceComponent, SynchronizedChartComponent} from "./components";
 import {FilterDailyPriceComponent} from "./components/daily-price";
 import {ShareModule} from "../../share/share.module";
 import {MatTableModule} from "@angular/material/table";
@@ -31,6 +31,7 @@ import {MatSelectModule} from "@angular/material/select";
     DailyPriceComponent,
     FilterDailyPriceComponent,
     LineChartDailyPriceComponent,
+    SynchronizedChartComponent,
   ],
     imports: [
         CommonModule,
@@ -50,7 +51,7 @@ import {MatSelectModule} from "@angular/material/select";
         MatDividerModule,
         FundModule,
         MatSelectModule,
-        FormsModule
+        FormsModule,
     ],
   schemas: [ NO_ERRORS_SCHEMA  ],
   providers: [

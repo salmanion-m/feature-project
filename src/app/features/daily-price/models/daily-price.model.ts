@@ -1,19 +1,19 @@
 export class DailyPrice {
   id: number ;
-  insCode: number ;
   deven: number ;
+  xNivInuClMresIbs: number;
+  insCode: number ;
   pclosing: number ;
   pdrCotVal: number ;
-  ztotTran: number ;
-  qtotTran5J: number ;
-  qtotCap: number ;
-  priceMin: number ;
-  priceMax: number ;
-  priceYesterday: number ;
   priceFirst: number ;
+  priceMax: number ;
+  priceMin: number ;
+  priceYesterday: number ;
+  qtotCap: number ;
+  qtotTran5J: number ;
   regDate: number ;
   regTime: number ;
+  ztotTran: number ;
   shamsidate: string;
-
-
 }
+

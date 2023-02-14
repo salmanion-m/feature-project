@@ -22,24 +22,24 @@ export interface Tile {
 export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyPrice> implements OnInit {
 
 
-  tiles: Tile[] = [
-    // {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    // {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    // {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    // {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-    {text: 'One', cols: 1, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 1, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
-    {text: 'Five', cols: 1, rows: 1, color: '#DDBDF1'},
-    {text: 'Six', cols: 1, rows: 1, color: '#DDBDF1'},
-    {text: 'Seven', cols: 2, rows: 1, color: '#DDBDF1'}
-  ];
+  // tiles: Tile[] = [
+  //   // {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
+  //   // {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
+  //   // {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
+  //   // {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+  //   {text: 'One', cols: 1, rows: 1, color: 'lightblue'},
+  //   {text: 'Two', cols: 1, rows: 1, color: 'lightgreen'},
+  //   {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
+  //   {text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
+  //   {text: 'Five', cols: 1, rows: 1, color: '#DDBDF1'},
+  //   {text: 'Six', cols: 1, rows: 1, color: '#DDBDF1'},
+  //   {text: 'Seven', cols: 2, rows: 1, color: '#DDBDF1'}
+  // ];
 
 
 
 
-  colorControl = new FormControl('warn' as ThemePalette);
+  // colorControl = new FormControl('warn' as ThemePalette);
 
 
   today: any;
@@ -62,12 +62,13 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
 
   override ngOnInit(): void {
     super.ngOnInit();
-    this._getCurrentDate();
+    // this._getCurrentDate();
   }
 
   protected override _createForm() {
     this.form = this.fb.group({
-      insCode: new FormControl('49613772749166261'),
+      // insCode: new FormControl('49613772749166261'),
+      insCode: new FormControl('59217041815333317'),
       FromD: new FormControl(),
       ToD: new FormControl(),
     })

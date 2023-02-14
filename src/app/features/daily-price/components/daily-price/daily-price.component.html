@@ -29,17 +29,18 @@
       <td mat-cell *matCellDef="let data">{{data.pclosing}}</td>
     </ng-container>
 
+        <!-- xNivInuClMresIbs Column -->
+        <ng-container matColumnDef="xNivInuClMresIbs" >
+          <th mat-header-cell *matHeaderCellDef>xNivInuClMresIbs</th>
+          <td mat-cell *matCellDef="let data">{{data.xNivInuClMresIbs}}</td>
+        </ng-container>
+
         <!-- shamsidate Column -->
         <ng-container matColumnDef="shamsidate">
           <th mat-header-cell *matHeaderCellDef>تاریخ</th>
           <td mat-cell *matCellDef="let data">{{data.shamsidate}}</td>
         </ng-container>
 
-    <!--    &lt;!&ndash; instituteKind Column &ndash;&gt;-->
-    <!--    <ng-container matColumnDef="instituteKind" >-->
-    <!--      <th mat-header-cell *matHeaderCellDef>گروه موسسه</th>-->
-    <!--      <td mat-cell *matCellDef="let data">{{data.i.instituteKind}}</td>-->
-    <!--    </ng-container>-->
 
     <!--    &lt;!&ndash; seoregisterNo Column &ndash;&gt;-->
     <!--    <ng-container matColumnDef="seoregisterNo">-->
@@ -83,6 +84,7 @@
 <!--  </div>-->
 
   <mat-divider></mat-divider>
-  <app-line-chart-daily-price *ngIf="chart" [dataChart]="newData" [namechart]="newName"></app-line-chart-daily-price>
+<!--  <app-line-chart-daily-price *ngIf="chart" [pClosing]="pClosing" [namechart]="newName" [xNivInuClMresIbs]="xNivInuClMresIbs"></app-line-chart-daily-price>-->
+  <app-synchronized-chart *ngIf="chart" [pClosing]="pClosing" [namechart]="newName" [xNivInuClMresIbs]="xNivInuClMresIbs"></app-synchronized-chart>
 
 </div>
