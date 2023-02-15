@@ -4,11 +4,11 @@ import {reduce} from "rxjs";
 
 
 @Component({
-  selector: 'app-synchronized-chart',
-  templateUrl: './synchronized-chart.component.html',
-  styleUrls: ['./synchronized-chart.component.scss']
+  selector: 'app-spline-chart',
+  templateUrl: './spline-chart.component.html',
+  styleUrls: ['./spline-chart.component.scss']
 })
-export class SynchronizedChartComponent implements OnInit , AfterViewInit{
+export class SplineChartComponent implements OnInit , AfterViewInit{
 
 
   @ViewChild('target')
@@ -16,18 +16,18 @@ export class SynchronizedChartComponent implements OnInit , AfterViewInit{
   chartTarget: ElementRef<any>;
   config: Highcharts.Options;
   chart: Highcharts.Chart;
-  colors = Highcharts.getOptions().colors;
+  // colors = Highcharts.getOptions().colors;
 
 
-  @Input() pClosing: number[] = [];
+  @Input() pClosing: (null | number)[] = [];
   @Input() namechart: string[] = [];
-  @Input() xNivInuClMresIbs: number[] = [];
+  @Input() xNivInuClMresIbs: (null | number)[] = [];
 
 
   ngOnInit() {
-    console.log('this.newData2', this.pClosing);
-    console.log('this.newName2', this.namechart);
-    console.log('xNivInuClMresIbs', this.xNivInuClMresIbs)
+    // console.log('this.newData2', this.pClosing);
+    // console.log('this.newName2', this.namechart);
+    // console.log('xNivInuClMresIbs', this.xNivInuClMresIbs)
 
   }
 
@@ -38,7 +38,7 @@ export class SynchronizedChartComponent implements OnInit , AfterViewInit{
         type: 'spline',
         events: {
           load() {
-            console.log(this.options.colors)
+            // console.log(this.options.colors)
           }
         }
       },
@@ -51,7 +51,7 @@ export class SynchronizedChartComponent implements OnInit , AfterViewInit{
         // reversed: true,
         categories: this.namechart,
         labels: {
-          rotation: 10,
+          rotation:-45,
         }
       },
       yAxis: [

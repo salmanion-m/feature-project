@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SynchronizedChartComponent } from './synchronized-chart.component';
+import { SplineChartComponent } from './spline-chart.component';
 
 describe('SynchronizedChartComponent', () => {
-  let component: SynchronizedChartComponent;
-  let fixture: ComponentFixture<SynchronizedChartComponent>;
+  let component: SplineChartComponent;
+  let fixture: ComponentFixture<SplineChartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SynchronizedChartComponent ]
+      declarations: [ SplineChartComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SynchronizedChartComponent);
+    fixture = TestBed.createComponent(SplineChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
