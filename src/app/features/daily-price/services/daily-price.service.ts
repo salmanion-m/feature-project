@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../../environments/environment";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {UrlHelper} from "../../../share";
 import {DailyPrice, FilterDailyPrice} from "../models";
 
@@ -19,6 +19,9 @@ export class DailyPriceService {
 
   getDailyPriceList(filter: FilterDailyPrice): Observable<DailyPrice[]> {
     return this.http.get<DailyPrice[]>(`${this._apiUrl}`, {params: UrlHelper.fromModel(filter)})
+      .pipe(map(data => {
+        return data.sort((a , b ) => a.shamsidate > b.shamsidate ? 1: -1)
+      }))
   }
 
 }
