@@ -20,9 +20,9 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
   displayedColumn: string[] = ['index', 'insCode', 'deven', 'pclosing', 'xNivInuClMresIbs', 'shamsidate'];
 
   chart: boolean = false;
-  pClosing: number[] = [];
+  pClosing: (null | number)[] = [];
   newName: string[] = [];
-  xNivInuClMresIbs: number[] = [];
+  xNivInuClMresIbs: (null | number)[] = [];
 
   item: Charofchart[] = []
 
@@ -38,7 +38,8 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
-    this.appService.setTitle('قیمت روزانه')
+    this.appService.setTitle('قیمت روزانه');
+    this.replaceZeroWithNull();
   }
 
   ngAfterViewInit() {
@@ -61,21 +62,41 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
   private _getDailyPrice(): void {
     this.dailyService.getDailyPriceList(this.filter).subscribe((result: DailyPrice[]) => {
       this.list = result;
-      console.log('::::>>>>', this.list);
+      // console.log('::::>>>>', this.list);
       this.list.forEach((item => {
         this.pClosing.push(item.pclosing);
         this.newName.push(String(item.shamsidate));
         this.xNivInuClMresIbs.push(item.xNivInuClMresIbs);
       }));
-      console.log('pClosing', this.pClosing);
-      console.log('newName', this.newName);
-      console.log('xNivInuClMresIbs', this.xNivInuClMresIbs)
+      // console.log('pClosing', this.pClosing);
+      // console.log('newName', this.newName);
+      // console.log('xNivInuClMresIbs', this.xNivInuClMresIbs);
+
+
+      this.replaceZeroWithNull();
+      //
+      // console.log('datanullshow1',this.pClosing);
+      // console.log('datanullshowxn1',this.xNivInuClMresIbs);
+
+
       this.dataSource = new MatTableDataSource(this.list);
       this.dataSource.paginator = this.paginator;
       // this.showCharts();
       this.chart = true
     })
   }
+
+
+  replaceZeroWithNull(): void{
+    // console.log('datazeroshow',this.pClosing);
+    this.pClosing = this.pClosing.map(value => value === 0 ? null : value);
+    // console.log('datanullshow2',this.pClosing);
+    // console.log('datazeroshowxv',this.xNivInuClMresIbs);
+    this.xNivInuClMresIbs = this.xNivInuClMresIbs.map(value => value === 0 ? null : value);
+    // console.log('datanullshowxn2',this.xNivInuClMresIbs);
+  }
+
+
 
   // showCharts() {
   //   if (this.chart === false) {
