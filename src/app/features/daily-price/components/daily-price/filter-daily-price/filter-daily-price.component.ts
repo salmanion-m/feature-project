@@ -62,7 +62,7 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
 
   override ngOnInit(): void {
     super.ngOnInit();
-    // this._getCurrentDate();
+    this._getCurrentDate();
   }
 
   protected override _createForm() {
@@ -71,6 +71,8 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
       insCode: new FormControl('59217041815333317'),
       FromD: new FormControl(),
       ToD: new FormControl(),
+      // FromD: new FormControl('1401/01/01'),
+      // ToD: new FormControl('1401/01/09'),
     })
   }
 

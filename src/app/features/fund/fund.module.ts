@@ -11,6 +11,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatInputModule} from "@angular/material/input";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {MatInputModule} from "@angular/material/input";
     MatFormFieldModule,
     MatIconModule,
     MatSidenavModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule,
+    MatDatepickerModule
   ],
   exports: [
     LayotedComponent

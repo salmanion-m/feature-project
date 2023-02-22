@@ -20,9 +20,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // constructor(private authService: AuthService) { }
 
-  login(): void {
+  Logout(): void {
+    localStorage.removeItem('token');
     this.router.navigate(['/auth/login'])
     console.log('Logged out');
   }
