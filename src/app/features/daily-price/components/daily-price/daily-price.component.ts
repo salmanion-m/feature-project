@@ -38,8 +38,9 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
+    // this.onApplyFilter(this.filter);
     this.appService.setTitle('قیمت روزانه');
-    this.replaceZeroWithNull();
+    // this.replaceZeroWithNull();
   }
 
   ngAfterViewInit() {
@@ -47,6 +48,7 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
 
 
   onApplyFilter(filters: any): void {
+
     this.filter = FilterDailyPrice.fromJson(filters);
     this.chart = false;
     if (this.pClosing.values() && this.newName.values() && this.xNivInuClMresIbs.values()) {
@@ -71,14 +73,9 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
       // console.log('pClosing', this.pClosing);
       // console.log('newName', this.newName);
       // console.log('xNivInuClMresIbs', this.xNivInuClMresIbs);
-
-
       this.replaceZeroWithNull();
-      //
       // console.log('datanullshow1',this.pClosing);
       // console.log('datanullshowxn1',this.xNivInuClMresIbs);
-
-
       this.dataSource = new MatTableDataSource(this.list);
       this.dataSource.paginator = this.paginator;
       // this.showCharts();
@@ -90,10 +87,8 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
   replaceZeroWithNull(): void{
     // console.log('datazeroshow',this.pClosing);
     this.pClosing = this.pClosing.map(value => value === 0 ? null : value);
-    // console.log('datanullshow2',this.pClosing);
     // console.log('datazeroshowxv',this.xNivInuClMresIbs);
     this.xNivInuClMresIbs = this.xNivInuClMresIbs.map(value => value === 0 ? null : value);
-    // console.log('datanullshowxn2',this.xNivInuClMresIbs);
   }
 
 
