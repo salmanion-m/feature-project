@@ -6,8 +6,7 @@
         *ngIf="item.title"
         [routerLink]="item.link"
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
+        [routerLinkActiveOptions]="{ exact: true }">
         <mat-icon [style.color]="item.color" mat-list-icon>
           {{ item.icon }}
         </mat-icon>
@@ -17,7 +16,7 @@
     </ng-container>
 
     <!-- If the item has subMenu show it as accordion-->
-    <ng-container *ngIf="item.subMenu">
+    <ng-container *ngIf="item.subMenu ">
       <mat-expansion-panel [expanded]="item.expanded">
         <mat-expansion-panel-header>
           <mat-panel-title class="d-flex align-items-center">
@@ -27,9 +26,37 @@
             <span mat-line class="list-item">{{ item.title }}</span>
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <app-main-sidebar [menu]="item.subMenu"></app-main-sidebar>
+        <app-main-sidebar  [menu]="item.subMenu"></app-main-sidebar>
       </mat-expansion-panel>
     </ng-container>
 
   </ng-container>
 </mat-list>
+
+
+<!--<div>-->
+  <!--        <mat-accordion>-->
+  <!--          <h4>accordion solo!</h4>-->
+  <!--          <mat-expansion-panel   [(expanded)]="panelOpenState" >-->
+  <!--            <mat-expansion-panel-header (click)="closePanel()">Foo</mat-expansion-panel-header>-->
+  <!--            Foo content here-->
+  <!--            <p>Lorem ipsum dolor sit ametm libero,</p>-->
+  <!--          </mat-expansion-panel>-->
+
+  <!--          <mat-expansion-panel>-->
+  <!--            <mat-expansion-panel-header>Bar</mat-expansion-panel-header>-->
+  <!--            Bar content here-->
+  <!--            <p>Lorem ipsum dolor sit amet,</p>-->
+  <!--          </mat-expansion-panel>-->
+
+  <!--          <mat-expansion-panel>-->
+  <!--            <mat-expansion-panel-header>Baz</mat-expansion-panel-header>-->
+  <!--            Baz content here-->
+  <!--            <p>Lorem ipsum dolor sit amet,</p>-->
+  <!--          </mat-expansion-panel>-->
+  <!--        </mat-accordion>-->
+  <!--      </div>-->
+
+
+
+

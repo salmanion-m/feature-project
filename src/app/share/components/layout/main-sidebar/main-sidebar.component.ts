@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {Menu} from "../../../models";
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {Menu, MenuItem} from "../../../models";
 
 @Component({
   selector: 'app-main-sidebar',
@@ -10,5 +10,16 @@ import {Menu} from "../../../models";
 export class MainSidebarComponent {
 
   @Input() menu: Menu = [];
+
+  open: boolean = false
+
+  panelOpenState: boolean = false;
+
+  closePanel() {
+    this.panelOpenState = true;
+  }
+
+
+
 
 }
