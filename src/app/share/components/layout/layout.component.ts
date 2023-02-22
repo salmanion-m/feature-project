@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Menu} from "../../models";
 
 @Component({
@@ -23,7 +23,6 @@ export class LayoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // showFiller = false;
 
   menu: Menu = [
     {
@@ -76,9 +75,5 @@ export class LayoutComponent implements OnInit {
       ],
     },
   ];
-
-
-
-
 
 }
