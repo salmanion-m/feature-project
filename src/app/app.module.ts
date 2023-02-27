@@ -16,6 +16,7 @@ import {UsersModule} from "./features/users/users.module";
 import {UsersService} from "./features/users";
 import {AuthInterceptor} from "./core";
 import {DailyPriceModule} from "./features/daily-price/daily-price.module";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -23,8 +24,8 @@ import {DailyPriceModule} from "./features/daily-price/daily-price.module";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     HttpClientModule,
     CoreModule,
     ShareModule,
@@ -34,7 +35,8 @@ import {DailyPriceModule} from "./features/daily-price/daily-price.module";
     IndustryModule,
     InstrumentModule,
     LetterTypeModule,
-    UsersModule
+    UsersModule,
+    FontAwesomeModule
   ],
   schemas: [ NO_ERRORS_SCHEMA  ],
   providers: [UsersService,

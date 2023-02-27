@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 //@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+  //new for sidenav
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import "~@fortawesome/fontawesome-free/css/all.css";
+ //new for sidenav
 
 @font-face {
   font-family: yekan-font;
@@ -20,17 +24,48 @@
   url('./assets/font/tanha-font-v0.9/Tanha.ttf') format('truetype');
 }
 
-html, body {
-  direction: rtl;
-  text-align: right;
-  height: 100%;
-  font-family: yekan-font;
-  overflow: auto;
-}
+//html, body {
+//  direction: rtl;
+//  text-align: right;
+//  height: 100%;
+//  font-family: yekan-font;
+//  overflow: auto;
+//}
 
 body {
   margin: 0;
+  //
+  position: relative;
 }
+////new for sidenav
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: .5rem;
+  background-color: #fff;
+  margin: 1.25rem 0 1.25rem 0;
+  box-shadow: 0 .25rem .5rem #e6edef;
+
+  .card-head {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #edf1f7;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .card-body {
+    padding: 1rem 1.5rem;
+  }
+}
+
+
+
 
 //container
 .container {

@@ -1,7 +1,13 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {FilterTableComponent, HeaderComponent, MainSidebarComponent, SidebarComponent} from "./components";
+import {
+    FilterTableComponent,
+    HeaderComponent,
+    MainSidebarComponent,
+    SidebarComponent,
+    SidenavComponent
+} from "./components";
 import {LayoutComponent} from "./components/layout/layout.component";
 import {TableComponent} from "./components/table/table.component";
 import {MatSidenavModule} from "@angular/material/sidenav";
@@ -18,6 +24,8 @@ import {PageHeaderComponent} from './components/layout/page-header/page-header.c
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {ShareRoutingModule} from "./share-routing.module";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SublevelMenuComponent } from './components/sidenav/sublevel-menu/sublevel-menu.component';
 
 
 
@@ -31,14 +39,17 @@ import {ShareRoutingModule} from "./share-routing.module";
     HeaderComponent,
     MainSidebarComponent,
     PageHeaderComponent,
+    SidenavComponent,
+    SublevelMenuComponent,
 
   ],
-  exports: [
-    LayoutComponent,
-    HeaderComponent,
-    MainSidebarComponent,
-    PageHeaderComponent
-  ],
+    exports: [
+        LayoutComponent,
+        HeaderComponent,
+        MainSidebarComponent,
+        PageHeaderComponent,
+        SidenavComponent,
+    ],
   imports: [
     CommonModule,
     ShareRoutingModule,
@@ -54,6 +65,7 @@ import {ShareRoutingModule} from "./share-routing.module";
     MatButtonModule,
     MatFormFieldModule,
     MatDatepickerModule,
+    FontAwesomeModule
 
 
   ],

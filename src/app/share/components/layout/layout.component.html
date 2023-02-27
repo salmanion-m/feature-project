@@ -1,23 +1,25 @@
-<div >
-  <app-header (menuToggled)="toggle()"></app-header>
+<!--<div >-->
+<!--  <app-header (menuToggled)="toggle()"></app-header>-->
 
-  <mat-drawer-container>
+<!--  <mat-drawer-container>-->
 
-    <mat-drawer mode="side"  [opened]="opened" >
-      <app-main-sidebar [menu]="menu"></app-main-sidebar>
-    </mat-drawer>
+<!--    <mat-drawer mode="side"  [opened]="opened" >-->
+<!--      <app-main-sidebar [menu]="menu"></app-main-sidebar>-->
+<!--    </mat-drawer>-->
 
-    <mat-drawer-content [class.margin-left]="opened" >
+<!--    <mat-drawer-content [class.margin-left]="opened" >-->
 
-      <app-page-header></app-page-header>
+<!--      <app-page-header></app-page-header>-->
 
-      <div class="container-fluid">
-        <router-outlet></router-outlet>
-      </div>
+<!--      <div class="container-fluid">-->
+<!--        <router-outlet></router-outlet>-->
+<!--      </div>-->
 
-    </mat-drawer-content>
+<!--    </mat-drawer-content>-->
 
-  </mat-drawer-container>
+<!--  </mat-drawer-container>-->
+<!--</div>-->
+
+<div class="body" [ngClass]="getBodyClass()">
+  <router-outlet></router-outlet>
 </div>
-
-
