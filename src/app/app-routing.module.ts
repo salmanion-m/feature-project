@@ -1,7 +1,19 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {RoutingFormComponent} from "./features/dashbord";
+import {FundTableComponent} from "./features/fund";
+import {LetterTypeTableComponent} from "./features/letter-type";
+import {DailyPriceComponent} from "./features/daily-price";
+import {InstrumentTableComponent} from "./features/instrument";
+import {IndustryTableComponent} from "./features/industry";
 
 const routes: Routes = [
+  // {path: 'dashboard', component: RoutingFormComponent},
+  // {path: 'fund-table', component: FundTableComponent},
+  // {path: 'letter', component: LetterTypeTableComponent},
+  // {path: 'daily', component: DailyPriceComponent},
+  // {path: 'ins', component: InstrumentTableComponent},
+  // {path: 'ind', component: IndustryTableComponent},
   //bayad taghir dade shavad
   {path: '', pathMatch: 'full', redirectTo: 'dashbord/link'},
   {path: 'auth', loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule)},
@@ -17,4 +29,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -65,10 +65,10 @@ export class SidenavComponent implements OnInit {
     this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
 
-  handeleClick(item: INavbarData): void{
-    if(!this.multiple) {
+  handleClick(item: INavbarData): void{
+    if (!this.multiple) {
       for(let modelItem of this.navData) {
-        if(item !== modelItem && modelItem.expanded) {
+        if (item !== modelItem && modelItem.expanded) {
           modelItem.expanded = false;
         }
       }

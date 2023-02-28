@@ -2,11 +2,11 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {
-    FilterTableComponent,
-    HeaderComponent,
-    MainSidebarComponent,
-    SidebarComponent,
-    SidenavComponent
+  FilterTableComponent,
+  HeaderComponent,
+  MainSidebarComponent,
+  SidebarComponent,
+  SidenavComponent, SublevelMenuComponent
 } from "./components";
 import {LayoutComponent} from "./components/layout/layout.component";
 import {TableComponent} from "./components/table/table.component";
@@ -25,7 +25,6 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {ShareRoutingModule} from "./share-routing.module";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SublevelMenuComponent } from './components/sidenav/sublevel-menu/sublevel-menu.component';
 
 
 

@@ -95,45 +95,49 @@
         //margin-right: 1.5rem;
       }
     }
-
     .sidenav-nav-link:hover {
       background-color: #fff;
       color: #000;
 
-      .menu-collapse-icon {
+      .menu-collapse-icon{
         color: #000;
       }
-    }
 
-  }
-
-  //  .sidenav-nav-item:hover {
-  //    .sidenav-nav-link {
-  //      background-color: #fff;
-  //      color: #000;
-  //    }
-  //  }
-  }
-
-  .active {
-    background-color: #fff;
-
-    .menu-collapse-icon,
-    .sidenav-link-icon,
-    .sidenav-link-text {
-      color: #000;
     }
   }
+}
 
-  .menu-collapse-icon {
-    font-size: 25px;
-    width: 2rem;
-    min-width: 2rem;
-    margin: auto 0.5rem auto auto;
-    text-align: center;
-    color: #f3f3f3;
+//.sidenav-nav-item:hover {
+//  .sidenav-nav-link {
+//    background-color: #fff;
+//    color: #000;
+//  }
+//  }
+//}
+
+.active {
+  background-color: #fff;
+
+  .menu-collapse-icon,
+  .sidenav-link-icon,
+  .sidenav-link-text {
+    color: #000;
   }
+}
 
+.active-sublevel {
+  color: #f3f3f3 !important;
+  // opacity: 1 !important;
+}
+
+.menu-collapse-icon {
+  font-size: 25px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: auto 0.5rem auto auto;
+  text-align: center;
+  color: #f3f3f3;
+}
 
 .sublevel-nav {
   list-style: none;
