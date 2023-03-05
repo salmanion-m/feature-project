@@ -144,6 +144,13 @@ app-letter-type-table {
 
   }
 
+  .mdc-text-field--outlined .mdc-notched-outline {
+    direction: ltr;
+  }
+  .mat-mdc-select-arrow {
+    margin-right: 12px;
+  }
+
 }
 //*****************************//  END : PAGINATION  //*****************************//
 
