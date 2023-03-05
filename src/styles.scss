@@ -24,13 +24,13 @@
   url('./assets/font/tanha-font-v0.9/Tanha.ttf') format('truetype');
 }
 
-//html, body {
-//  direction: rtl;
-//  text-align: right;
-//  height: 100%;
-//  font-family: yekan-font;
-//  overflow: auto;
-//}
+html, body {
+  direction: rtl;
+  text-align: right;
+  height: 100%;
+  font-family: yekan-font;
+  overflow: auto;
+}
 
 body {
   margin: 0;

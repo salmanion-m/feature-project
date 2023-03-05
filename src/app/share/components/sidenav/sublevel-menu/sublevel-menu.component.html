@@ -46,9 +46,10 @@
   <li *ngFor="let item of data.items" class="sublevel-nav-item">
     <a class="sublevel-nav-link"
        (click)="handleClick(item)"
-       *ngIf="item.items && item.items.length > 0">
+       *ngIf="item.items && item.items.length > 0"
+    [ngClass]="getActiveClass(item)">
       <i class="sublevel-link-icon fa fa-circle"></i>
-      <span class="sublevel-link-text" *ngIf="collapsed">{{item.label}}</span>
+      <span class="sublevel-link-text" @fadeInOut *ngIf="collapsed">{{item.label}}</span>
       <i *ngIf="item.items && collapsed" class="menu-collapse-icon"
          [ngClass]="!item.expanded ? 'fa fa-angle-right' : 'fa fa-angle-down'" ></i>
     </a>
@@ -58,7 +59,7 @@
        routerLinkActive="active-sublevel"
        [routerLinkActiveOptions]="{exact : true}">
       <i class="sublevel-link-icon fa fa-circle"></i>
-      <span class="sublevel-link-text" *ngIf="collapsed">{{item.label}}</span>
+      <span class="sublevel-link-text" @fadeInOut *ngIf="collapsed">{{item.label}}</span>
     </a>
     <div *ngIf="item.items && item.items.length > 0">
       <app-sublevel-menu
