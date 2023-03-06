@@ -6,16 +6,12 @@ import {LetterTypeTableComponent} from "./features/letter-type";
 import {DailyPriceComponent} from "./features/daily-price";
 import {InstrumentTableComponent} from "./features/instrument";
 import {IndustryTableComponent} from "./features/industry";
+import {AppComponent} from "./app.component";
 
 const routes: Routes = [
-  // {path: 'dashboard', component: RoutingFormComponent},
-  // {path: 'fund-table', component: FundTableComponent},
-  // {path: 'letter', component: LetterTypeTableComponent},
-  // {path: 'daily', component: DailyPriceComponent},
-  // {path: 'ins', component: InstrumentTableComponent},
-  // {path: 'ind', component: IndustryTableComponent},
   //bayad taghir dade shavad
   {path: '', pathMatch: 'full', redirectTo: 'dashbord/link'},
+  {path: 'table', component: AppComponent },
   {path: 'auth', loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule)},
   {path: 'dashbord', loadChildren: () => import('./features/dashbord/dashbord.module').then(m => m.DashbordModule)},
   {path: 'day', loadChildren: () => import('./features/daily-price/daily-price.module').then(m => m.DailyPriceModule)},
