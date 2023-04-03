@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {
   FilterTableComponent,
   HeaderComponent,
+  HeaderrComponent,
   MainSidebarComponent,
   SidebarComponent,
   SidenavComponent, SublevelMenuComponent
@@ -25,6 +26,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {ShareRoutingModule} from "./share-routing.module";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {CdkMenuModule} from "@angular/cdk/menu";
+import {OverlayModule} from "@angular/cdk/overlay";
+import { BodyComponent } from './components/body/body.component';
 
 
 
@@ -40,15 +44,18 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PageHeaderComponent,
     SidenavComponent,
     SublevelMenuComponent,
+    HeaderrComponent,
+    BodyComponent,
 
   ],
-    exports: [
-        LayoutComponent,
-        HeaderComponent,
-        MainSidebarComponent,
-        PageHeaderComponent,
-        SidenavComponent,
-    ],
+  exports: [
+    LayoutComponent,
+    HeaderComponent,
+    MainSidebarComponent,
+    PageHeaderComponent,
+    SidenavComponent,
+    HeaderrComponent,
+  ],
   imports: [
     CommonModule,
     ShareRoutingModule,
@@ -64,7 +71,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatButtonModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CdkMenuModule,
+    OverlayModule,
 
 
   ],

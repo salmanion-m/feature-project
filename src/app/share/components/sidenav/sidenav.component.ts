@@ -25,7 +25,7 @@ export class SidenavComponent implements OnInit {
 
 
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
-  collapsed = false;
+  collapsed: boolean = false;
   screenWidth: number = 0;
   navData = navbarData;
   multiple: boolean = true;
@@ -39,7 +39,7 @@ export class SidenavComponent implements OnInit {
     }
   }
 
-  constructor(public router : Router) {
+  constructor(public router: Router) {
   }
 
   ngOnInit(): void {
@@ -56,19 +56,19 @@ export class SidenavComponent implements OnInit {
     this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
 
-  handleClick(item: INavbarData): void{
+  handleClick(item: INavbarData): void {
     this.shrinkItems(item)
     item.expanded = !item.expanded
   }
 
 
   getActiveClass(data: INavbarData): string {
-    return this.router.url.includes(data.routeLink) ? 'active' : '' ;
+    return this.router.url.includes(data.routeLink) ? 'active' : '';
   }
 
-  shrinkItems(item : INavbarData): void {
+  shrinkItems(item: INavbarData): void {
     if (!this.multiple) {
-      for(let modelItem of this.navData) {
+      for (let modelItem of this.navData) {
         if (item !== modelItem && modelItem.expanded) {
           modelItem.expanded = false;
         }
