@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   hide = true;
   subscription: Subscription[] = [];
 
+   styleClass: string = '';
 
   constructor(private fb: FormBuilder,
               private router : Router,
@@ -42,5 +43,6 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/dashbord/link'])
     })
   }
+
 
 }

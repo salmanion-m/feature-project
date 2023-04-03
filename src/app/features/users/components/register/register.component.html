@@ -1,40 +1,104 @@
+<!--<div class="container1">-->
+
+<!--  <div class="reg-container">-->
+<!--    <div class="reg-content">-->
+<!--      <mat-toolbar class="reg-toolbar" color="primary">ثبت حساب کاربری</mat-toolbar>-->
+
+<!--      <mat-card >-->
+
+<!--        <form [formGroup]="registerForm" (ngSubmit)="register()">-->
+
+<!--          <mat-form-field appearance="outline" class="width" [dir]=" 'rtl'">-->
+<!--            <mat-label>نام کاربری</mat-label>-->
+<!--            <mat-icon matPrefix>person_outline</mat-icon>-->
+<!--            <input matInput autofocus type="text" formControlName="userName" >-->
+<!--            &lt;!&ndash;            <mat-error *ngIf="checkValidation('username')">&ndash;&gt;-->
+<!--            &lt;!&ndash;              {{ fieldRequired }}&ndash;&gt;-->
+<!--            &lt;!&ndash;            </mat-error>&ndash;&gt;-->
+<!--          </mat-form-field>-->
+
+<!--          <mat-form-field class="width" appearance="outline">-->
+<!--            <mat-label>رمز ورود</mat-label>-->
+<!--            <mat-icon matPrefix>lock_outline</mat-icon>-->
+<!--            <input matInput [type]="hide ? 'password' : 'text'" autofocus="false" formControlName="password">-->
+<!--            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">-->
+<!--              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+<!--            </button>-->
+<!--          </mat-form-field>-->
+
+<!--          <div class="button">-->
+<!--            <button type="submit" mat-raised-button color="primary" [disabled]="registerForm.invalid">ورود</button>-->
+<!--          </div>-->
+
+<!--        </form>-->
+<!--      </mat-card>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
 <div class="container">
+  <img class="screen_image" src="assets/images/123770.jpg">
+  <div class="screen">
 
-  <div class="reg-container">
-    <div class="reg-content">
-      <mat-toolbar class="reg-toolbar" color="primary">ثبت حساب کاربری</mat-toolbar>
+    <div class="screen__content">
+      <form class="reg" [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="reg__field">
+          <i class="reg__icon fas fa-user" ></i>
+          <input type="text" class="reg__input"  placeholder="User name / Email" formControlName="userName">
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.userName">
+            <div class="error-message" *ngIf="registerForm.get('userName')?.hasError(error.type) && (registerForm.get('userName')?.dirty || registerForm.get('userName')?.touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
 
-      <mat-card >
+        <div class="reg__field">
+          <i class="reg__icon fas fa-lock"></i>
+          <input type="password" class="reg__input" placeholder="Password" formControlName="password"
+                 [type]="hide ? 'password' : 'text'">
+          <i class="show__pass fa fa-eye-low-vision" (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+             [attr.aria-pressed]="hide"></i>
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.password">
+            <div class="error-message" *ngIf="registerForm.get('password')?.hasError(error.type) && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="error-messages">
+        <div class="reg__field">
+          <i class="reg__icon fas fa-lock"></i>
+          <input type="password" class="reg__input" placeholder="Confirm Password" formControlName="confirmPassword"
+                 [type]="hide ? 'password' : 'text'">
+          <i class="show__pass fa fa-eye-low-vision" (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+             [attr.aria-pressed]="hide"></i>
+        </div>
 
-        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <ng-container *ngFor="let error of error_messages.confirmPassword">
+            <div class="error-message" *ngIf="registerForm.get('confirmPassword')?.hasError(error.type) && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
 
-          <mat-form-field appearance="outline" class="width">
-            <mat-label>نام کاربری</mat-label>
-            <mat-icon matPrefix>person_outline</mat-icon>
-            <input matInput autofocus type="text" formControlName="userName" >
-            <!--            <mat-error *ngIf="checkValidation('username')">-->
-            <!--              {{ fieldRequired }}-->
-            <!--            </mat-error>-->
-          </mat-form-field>
+        <div class="button" >
+          <button class="button reg__submit" type="submit" [disabled]="!registerForm.valid">
+            <span class="button__text"> ورود </span>
+            <i class="button__icon fas fa-chevron-left"></i>
+          </button>
+        </div>
 
-          <mat-form-field class="width" appearance="outline">
-            <mat-label>رمز ورود</mat-label>
-            <mat-icon matPrefix>lock_outline</mat-icon>
-            <input matInput [type]="hide ? 'password' : 'text'" autofocus="false" formControlName="password">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field>
-
-          <div class="button">
-            <button type="submit" mat-raised-button color="primary" [disabled]="registerForm.invalid">ورود</button>
-          </div>
-
-        </form>
-      </mat-card>
+      </form>
 
     </div>
+
   </div>
 </div>
+
 
 
