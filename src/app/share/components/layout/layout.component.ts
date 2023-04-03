@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {Menu} from "../../models";
+import {Menu, SideNavToggle} from "../../models";
 
 @Component({
   selector: 'app-layout',
@@ -76,16 +76,28 @@ export class LayoutComponent implements OnInit {
     },
   ];
 
-  @Input() collapsed = false;
-  @Input() screenWidth = 0;
+  // @Input() collapsed = false;
+  // @Input() screenWidth = 0;
+  //
+  // getBodyClass(): string {
+  //   let styleClass= '';
+  //   if(this.collapsed && this.screenWidth > 768){
+  //     styleClass = 'body-trimmed';
+  //   }else if(this.collapsed && this.screenWidth <= 768 && this.screenWidth > 0){
+  //     styleClass = 'body-md-screen'
+  //   }
+  //   return styleClass;
+  // }
 
-  getBodyClass(): string {
-    let styleClass= '';
-    if(this.collapsed && this.screenWidth > 768){
-      styleClass = 'body-trimmed';
-    }else if(this.collapsed && this.screenWidth <= 768 && this.screenWidth > 0){
-      styleClass = 'body-md-screen'
-    }
-    return styleClass;
+
+  isSideNaveCollapsed = false;
+  screenWidth = 0;
+
+  onToggleSideNav(data : SideNavToggle): void {
+    this.screenWidth = data.screenWidth;
+    this.isSideNaveCollapsed = data.collapsed;
+
   }
+
+
 }

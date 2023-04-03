@@ -18,6 +18,7 @@ import {AuthInterceptor} from "./core";
 import {DailyPriceModule} from "./features/daily-price/daily-price.module";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -36,7 +37,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     InstrumentModule,
     LetterTypeModule,
     UsersModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   schemas: [ NO_ERRORS_SCHEMA  ],
   providers: [UsersService,

@@ -11,6 +11,7 @@ export class MainSidebarComponent {
 
   @Input() menu: Menu = [];
 
+
   open: boolean = false
 
   panelOpenState: boolean = false;
