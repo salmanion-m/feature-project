@@ -42,12 +42,12 @@ export class RegisterComponent implements OnInit {
 
   error_messages = {
     'userName': [
-      {type: 'required', message: 'User Name is required.'},
+      {type: 'required', message: '!User Name is required'},
     ],
     'password': [
-      {type: 'required', message: 'password is required.'},
-      {type: 'minlength', message: 'password 3 length.'},
-      {type: 'maxlength', message: 'password 6 length.'}
+      {type: 'required', message: '!password is required'},
+      {type: 'minlength', message: '!password 3 length'},
+      {type: 'maxlength', message: '!password 6 length'}
     ],
     'confirmPassword': [
       {type: 'required', message: 'password is required.'},
