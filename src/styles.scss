@@ -3,6 +3,7 @@
   //new for sidenav
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import "~@fortawesome/fontawesome-free/css/all.css";
+@import '~@angular/cdk/overlay-prebuilt.css';
  //new for sidenav
 
 @font-face {
@@ -29,13 +30,13 @@ html, body {
   text-align: right;
   height: 100%;
   font-family: yekan-font;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 body {
   //margin: 0;
-  ////
-  //position: relative;
+  position: relative;
+  background: #f4f7fa;
 }
 ////new for sidenav
 * {
@@ -51,6 +52,7 @@ body {
   background-color: #fff;
   margin: 1.25rem 0 1.25rem 0;
   box-shadow: 0 .25rem .5rem #e6edef;
+  color: #495057;
 
   .card-head {
     padding: 1rem 1.5rem;
