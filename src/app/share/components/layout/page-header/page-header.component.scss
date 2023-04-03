@@ -1,19 +1,42 @@
+.headerTitle {
+  margin-bottom: 10rem;
+}
+
+.headerTitle-trimmed {
+  width: calc(100% - 11.5625rem);
+  margin-right: 11.5625rem;
+}
+
+.headerTitle-md-screen {
+  width: calc(100% - 5rem);
+  margin-right: 5rem;
+}
+
 .feature-header {
-  background: white;
-  padding: 15px 20px;
-  border-bottom: 1px solid #ececec;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  box-shadow: 0 0 4px 2px #ececec;
+  margin-top: 6rem;
+  margin-right: 6rem;
+  z-index: 1;
+  background: #f4f7fa;
+  padding: 1rem 1.5rem 0 1.5rem;
+  position: fixed;
+  border-radius: 3rem;
 
-  // Make feature header sticky
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-
-  margin-bottom: 20px;
+  //padding-top: 8rem;
+  //margin-right: 8rem;
+  //background: white;
+  //padding: 15px 20px;
+  //border-bottom: 1px solid #ececec;
+  //display: flex;
+  //align-items: center;
+  //justify-content: space-between;
+  //gap: 20px;
+  //box-shadow: 0 0 4px 2px #ececec;
+  //
+  //// Make feature headerr sticky
+  //position: sticky;
+  //top: 0;
+  //z-index: 0;
+  //margin-bottom: 20px;
 }
 
 .title {
@@ -29,8 +52,9 @@
 .feature-header > .start {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
+  height: 3rem;
 }
 
 h1,
