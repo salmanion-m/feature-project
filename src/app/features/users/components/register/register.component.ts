@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {UsersService} from "../../services";
 import {Router} from "@angular/router";
+
+
 
 @Component({
   selector: 'app-register',
@@ -32,11 +34,8 @@ export class RegisterComponent implements OnInit {
         userName: new FormControl(null, [Validators.required]),
         // password: new FormControl(null, [Validators.required]),
         password: new FormControl(null, [Validators.required,Validators.maxLength(6),Validators.minLength(3)]),
-        confirmPassword:new FormControl (null , [Validators.required,Validators.maxLength(6),Validators.minLength(3)])
+        confirmPassword:new FormControl (null , [Validators.required,Validators.maxLength(6),Validators.minLength(3), this.confirmPasswordValidator.bind(this)])
       },
-      // {
-      //   validator: this.matchPasswords('password', 'confirmPassword')
-      // }
     );
   }
 
@@ -50,10 +49,21 @@ export class RegisterComponent implements OnInit {
       {type: 'maxlength', message: '!password 6 length'}
     ],
     'confirmPassword': [
-      {type: 'required', message: 'password is required.'},
-      {type: 'minlength', message: 'password length.'},
-      {type: 'maxlength', message: 'password length.'}
+      {type: 'required', message: '!password is required'},
+      {type: 'minlength', message: '!password length'},
+      {type: 'maxlength', message: '!password length'},
+      {type: 'mismatch', message: '!Passwords do not match'}
     ],
+  }
+
+
+  confirmPasswordValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const password = control.root.get('password');
+    const confirmPassword = control.value;
+    if (password && confirmPassword && password.value !== confirmPassword) {
+      return { 'mismatch': true };
+    }
+    return null;
   }
 
   register() {
@@ -64,23 +74,11 @@ export class RegisterComponent implements OnInit {
     }
     this.loading = true;
     // this.userService.registers(this.registerForm.value).subscribe(data => {
-    //   this.router.navigate(['/dashbord'])
+      this.router.navigate(['/auth/login'])
     // })
   }
 
 
-  // private matchPasswords(passwordKey: string, confirmPasswordKey: string) {
-  //   // console.log('passwordKey:',passwordKey,'confirmPasswordKey:',confirmPasswordKey)
-  //   return (group: FormGroup) => {
-  //     let password = group.controls[passwordKey];
-  //     let confirmPassword = group.controls[confirmPasswordKey];
-  //     if (password.value !== confirmPassword.value) {
-  //       return confirmPassword.setErrors({ notMatched: true });
-  //       console.log('notMatched')
-  //     }
-  //   };
-  // }
-  user: any;
 
 
 }

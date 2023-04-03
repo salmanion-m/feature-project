@@ -81,9 +81,13 @@
         </div>
 
           <ng-container *ngFor="let error of error_messages.confirmPassword">
-            <div class="error-message" *ngIf="registerForm.get('confirmPassword')?.hasError(error.type) && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)">
+            <div class="error-message" *ngIf="registerForm.get('confirmPassword')?.hasError(error.type) &&
+            (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched) ">
               {{ error.message }}
             </div>
+<!--            <div class="error-message" *ngIf="registerForm.get('confirmPassword').errors && registerForm.get('confirmPassword').errors.mismatch">-->
+<!--              {{error_messages.confirmPassword.find(x => x.type == 'mismatch').message}}-->
+<!--            </div>-->
           </ng-container>
         </div>
 
