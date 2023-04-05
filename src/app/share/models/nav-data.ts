@@ -1,5 +1,6 @@
 import {INavbarData} from "./i-navbar-data";
 
+// sidebar avaliye va chek kardan active bodan on
 // export const navbarData: INavbarData[] = [
 //   {
 //     routeLink: '/dashbord/link',
@@ -146,7 +147,7 @@ import {INavbarData} from "./i-navbar-data";
 //
 // ];
 
-
+//chek kardan scroll khordan sidenav
 // export const navbarData: INavbarData[] = [
 //   {
 //     routeLink: '/dashbord/link',
@@ -462,3 +463,93 @@ export const navbarData: INavbarData[] = [
   // },
 
 ];
+
+// export const navbarData: INavbarData[] = [
+//   {
+//     routeLink: '/dashbord/link',
+//     icon: 'fa fa-home',
+//     label: 'Dashboard'
+//   },
+//   {
+//     routeLink: '/fund',
+//     icon: 'fa fa-box-open',
+//     label: 'fund',
+//     items: [
+//       {
+//         routeLink: '/fund/level2.1',
+//         label: 'Level 1.1',
+//         items: [
+//           {
+//             // routeLink: 'products/level2.1',
+//             routeLink: '/fund/fund-table',
+//             label: '/fund/fund-table',
+//           },
+//           {
+//             routeLink: '/fund/layoted',
+//             label: 'Level 2.2',
+//             items: [
+//               {
+//                 routeLink: 'products/level3.1',
+//                 label: 'Level 3.1'
+//               },
+//               {
+//                 routeLink: 'products/level3.2',
+//                 label: 'Level 3.2'
+//               }
+//             ]
+//           }
+//         ]
+//       },
+//       {
+//         routeLink: 'products/level1.2',
+//         label: 'Level 1.2',
+//       }
+//     ]
+//   },
+//   {
+//     routeLink: 'statistics',
+//     icon: 'fa fa-chart-bar',
+//     label: 'Statistics'
+//   },
+//   {
+//     routeLink: 'coupens',
+//     icon: 'fa fa-tags',
+//     label: 'Coupens',
+//     items: [
+//       {
+//         routeLink: 'coupens/list',
+//         label: 'List Coupens'
+//       },
+//       {
+//         routeLink: 'coupens/create',
+//         label: 'Create Coupens'
+//       }
+//     ]
+//   },
+//   {
+//     routeLink: 'pages',
+//     icon: 'fa fa-file',
+//     label: 'Pages'
+//   },
+//   {
+//     routeLink: 'media',
+//     icon: 'fa fa-camera',
+//     label: 'Media'
+//   },
+//   {
+//     routeLink: 'settings',
+//     icon: 'fa fa-cog',
+//     label: 'Settings',
+//     expanded: true,
+//     items: [
+//       {
+//         routeLink: 'settings/profile',
+//         label: 'Profile'
+//       },
+//       {
+//         routeLink: 'settings/customize',
+//         label: 'Customize'
+//       }
+//     ]
+//   },
+// ];

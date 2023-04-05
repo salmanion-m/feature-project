@@ -89,14 +89,28 @@ export class LayoutComponent implements OnInit {
   //   return styleClass;
   // }
 
+  //oldest code closed sidenav when refreshed and chose the submenu
+  // isSideNaveCollapsed = true;
+  // screenWidth = 0;
+  //
+  //its ok and workit correctly and compleated code in line107
+  // onToggleSideNav(data : SideNavToggle): void {
+  //   this.screenWidth = data.screenWidth;
+  //   this.isSideNaveCollapsed = data.collapsed;
+  //
+  // }
 
-  isSideNaveCollapsed = false;
-  screenWidth = 0;
+  //new edited opened sidenav when refreshed and can close and opened
+  isSideNaveCollapsed = true; // Set to true to have sidenav collapsed by default
+  screenWidth = window.innerWidth; // Set to window width to have body resized by default
 
-  onToggleSideNav(data : SideNavToggle): void {
+  onToggleSideNav(data: SideNavToggle): void {
     this.screenWidth = data.screenWidth;
-    this.isSideNaveCollapsed = data.collapsed;
-
+    if (!data.collapsed) { // Only update collapsed state if it's not being collapsed
+      this.isSideNaveCollapsed = data.collapsed;
+    } else {
+      this.isSideNaveCollapsed = data.collapsed;
+    }
   }
 
 

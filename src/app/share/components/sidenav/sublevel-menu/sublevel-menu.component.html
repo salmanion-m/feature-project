@@ -25,10 +25,10 @@
 <!--    ></app-sublevel-menu>-->
 <!--  </div>-->
 <!--</li>-->
+<!--</ul>-->
 
 
-
-<!--</ul><ul *ngIf="collapsed && data.items && data.items.length > 0"-->
+<!--<ul *ngIf="collapsed && data.items && data.items.length > 0"-->
 <!--    [@sunmenu]="expanded-->
 <!--    ? {value: 'visible' ,-->
 <!--    params: {transitionParams: '400ms cubic-bezier(0.86, 0, 0.07, 1)',height: '*'}}-->
@@ -76,12 +76,12 @@
   <li *ngFor="let item of data.items" class="sublevel-nav-item">
     <a class="sublevel-nav-link"
        (click)="handleClick(item)"
-       *ngIf="item.items && item.items.length > 0"
+       *ngIf="item.items && item.items.length > 0 "
     [ngClass]="getActiveClass(item)">
       <i class="sublevel-link-icon fa fa-circle"></i>
       <span class="sublevel-link-text" @fadeInOut *ngIf="collapsed">{{item.label}}</span>
       <i *ngIf="item.items && collapsed" class="menu-collapse-icon"
-         [ngClass]="!item.expanded ? 'fa fa-angle-right' : 'fa fa-angle-down'" ></i>
+         [ngClass]="!item.expanded ? 'fa fa-angle-left' : 'fa fa-angle-down'" ></i>
     </a>
     <a class="sublevel-nav-link"
        *ngIf="!item.items || (item.items && item.items.length === 0 )"
@@ -102,3 +102,6 @@
     </div>
   </li>
 </ul>
+
+
+

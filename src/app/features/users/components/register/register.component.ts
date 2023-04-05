@@ -74,7 +74,8 @@ export class RegisterComponent implements OnInit {
     }
     this.loading = true;
     // this.userService.registers(this.registerForm.value).subscribe(data => {
-      this.router.navigate(['/auth/login'])
+    //   this.router.navigate(['/auth/login'])
+      this.router.navigate(['/dashbord/link'])
     // })
   }
 

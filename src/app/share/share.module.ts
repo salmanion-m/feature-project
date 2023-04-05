@@ -29,6 +29,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {CdkMenuModule} from "@angular/cdk/menu";
 import {OverlayModule} from "@angular/cdk/overlay";
 import { BodyComponent } from './components/body/body.component';
+import {AppService} from "./services";
 
 
 
@@ -77,7 +78,8 @@ import { BodyComponent } from './components/body/body.component';
 
 
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [ AppService ],
 })
 export class ShareModule {
 }
