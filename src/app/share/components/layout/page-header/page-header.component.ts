@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {AppService} from "../../../services";
+import {BehaviorSubject, Subject} from "rxjs";
 
 @Component({
   selector: 'app-page-header',
@@ -14,12 +15,22 @@ export class PageHeaderComponent implements OnInit {
 
   title: String;
 
-  constructor(private appService: AppService) {
+
+  constructor(private appService: AppService,
+              private cdRef: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
-    this.appService.getTitle().subscribe(appTitle => this.title = appTitle)
+    // this.appService.getTitle().subscribe(appTitle => this.title = appTitle)
+    this.appService.getTitle().subscribe(appTitle => {
+      this.title = appTitle;
+      this.cdRef.detectChanges();
+    });
+
   }
+
+
+
 
   // getHeaderClass(): string {
   //   let styleClass = '';

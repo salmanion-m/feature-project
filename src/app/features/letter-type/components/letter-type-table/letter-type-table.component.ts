@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import {LetterTypeTable} from "../../models";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
@@ -19,14 +19,20 @@ export class LetterTypeTableComponent implements OnInit{
 
   pageEvent={pageSize:10,pageIndex:0}
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  title: String;
 
   constructor(private router: Router,
               private LetterService: LetterTypeService,
-              private appService: AppService) {
+              private appService: AppService,
+              private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
-    this.appService.setTitle('نوع نامه')
+    this.appService.setTitle('نوع نامه');
+    this.appService.getTitle().subscribe(appTitle => {
+      this.title = appTitle;
+      this.cdr.detectChanges(); // call detectChanges() after updating title
+    });
     this._getLetterTypeList();
   }
 
