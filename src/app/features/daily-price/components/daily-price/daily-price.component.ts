@@ -12,7 +12,7 @@ import {AppService} from "../../../../share";
   templateUrl: './daily-price.component.html',
   styleUrls: ['./daily-price.component.scss'],
 })
-export class DailyPriceComponent implements OnInit, AfterViewInit {
+export class DailyPriceComponent implements OnInit {
 
   filter: FilterDailyPrice = new FilterDailyPrice();
   list: DailyPrice[] = [];
@@ -26,6 +26,7 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
 
   item: Charofchart[] = []
 
+
   pageEvent = {pageSize: 10, pageIndex: 0}
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -38,12 +39,7 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
-    // this.onApplyFilter(this.filter);
     this.appService.setTitle('قیمت روزانه');
-    // this.replaceZeroWithNull();
-  }
-
-  ngAfterViewInit() {
   }
 
 
@@ -52,8 +48,6 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
     this.filter = FilterDailyPrice.fromJson(filters);
     this.chart = false;
     if (this.pClosing.values() && this.newName.values() && this.xNivInuClMresIbs.values()) {
-      // this.newData.length = 0;
-      // this.newName.length = 0;
       this.newName = [];
       this.pClosing = [];
       this.xNivInuClMresIbs = [];
@@ -64,42 +58,23 @@ export class DailyPriceComponent implements OnInit, AfterViewInit {
   private _getDailyPrice(): void {
     this.dailyService.getDailyPriceList(this.filter).subscribe((result: DailyPrice[]) => {
       this.list = result;
-      // console.log('::::>>>>', this.list);
       this.list.forEach((item => {
         this.pClosing.push(item.pclosing);
         this.newName.push(String(item.shamsidate));
         this.xNivInuClMresIbs.push(item.xNivInuClMresIbs);
       }));
-      // console.log('pClosing', this.pClosing);
-      // console.log('newName', this.newName);
-      // console.log('xNivInuClMresIbs', this.xNivInuClMresIbs);
       this.replaceZeroWithNull();
-      // console.log('datanullshow1',this.pClosing);
-      // console.log('datanullshowxn1',this.xNivInuClMresIbs);
       this.dataSource = new MatTableDataSource(this.list);
       this.dataSource.paginator = this.paginator;
-      // this.showCharts();
       this.chart = true
     })
   }
 
 
-  replaceZeroWithNull(): void{
-    // console.log('datazeroshow',this.pClosing);
+  replaceZeroWithNull(): void {
     this.pClosing = this.pClosing.map(value => value === 0 ? null : value);
-    // console.log('datazeroshowxv',this.xNivInuClMresIbs);
     this.xNivInuClMresIbs = this.xNivInuClMresIbs.map(value => value === 0 ? null : value);
   }
-
-
-
-  // showCharts() {
-  //   if (this.chart === false) {
-  //     this.chart = true;
-  //   } else {
-  //     this.chart = false
-  //   }
-  // }
 
 
 }
