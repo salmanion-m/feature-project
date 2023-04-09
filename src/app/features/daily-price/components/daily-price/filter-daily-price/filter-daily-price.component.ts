@@ -5,9 +5,11 @@ import {FormBuilder, FormControl} from "@angular/forms";
 import {DailyPriceService} from "../../../services";
 import * as moment from 'jalali-moment';
 import {IDatePickerConfig} from "ng2-jalali-date-picker";
-import {MatDialog} from "@angular/material/dialog";
-import {MatAlertComponent} from "../../mat-alert/mat-alert.component";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 
+/**
+ * @title Dialog Animations
+ */
 
 @Component({
   selector: 'app-filter-daily-price',
@@ -32,7 +34,8 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
 
   constructor(private fb: FormBuilder,
               private dailyService: DailyPriceService,
-              public dialog: MatDialog) {
+              public dialog: MatDialog,
+              ) {
     super();
   }
 
@@ -93,7 +96,7 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(MatAlertComponent, {
+    this.dialog.open(FilterDailyPriceComponent, {
       width: '250px',
       enterAnimationDuration,
       exitAnimationDuration,
