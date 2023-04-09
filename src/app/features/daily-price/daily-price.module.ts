@@ -19,6 +19,8 @@ import {HighchartsChartModule} from "highcharts-angular";
 import {MatDividerModule} from "@angular/material/divider";
 import {FundModule} from "../fund/fund.module";
 import {MatSelectModule} from "@angular/material/select";
+import { MatAlertComponent } from './components/mat-alert/mat-alert.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 
@@ -32,6 +34,7 @@ import {MatSelectModule} from "@angular/material/select";
     FilterDailyPriceComponent,
     LineChartDailyPriceComponent,
     SplineChartComponent,
+    MatAlertComponent,
   ],
     imports: [
         CommonModule,
@@ -52,6 +55,7 @@ import {MatSelectModule} from "@angular/material/select";
         FundModule,
         MatSelectModule,
         FormsModule,
+        MatDialogModule,
     ],
   schemas: [ NO_ERRORS_SCHEMA  ],
   providers: [

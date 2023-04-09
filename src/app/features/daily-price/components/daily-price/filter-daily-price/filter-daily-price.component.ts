@@ -5,42 +5,17 @@ import {FormBuilder, FormControl} from "@angular/forms";
 import {DailyPriceService} from "../../../services";
 import * as moment from 'jalali-moment';
 import {IDatePickerConfig} from "ng2-jalali-date-picker";
-import {ThemePalette} from "@angular/material/core";
+import {MatDialog} from "@angular/material/dialog";
+import {MatAlertComponent} from "../../mat-alert/mat-alert.component";
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
 
 @Component({
   selector: 'app-filter-daily-price',
   templateUrl: './filter-daily-price.component.html',
   styleUrls: ['filter-daily-price.component.scss'],
 })
+
 export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyPrice> implements OnInit {
-
-
-  // tiles: Tile[] = [
-  //   // {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-  //   // {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-  //   // {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-  //   // {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  //   {text: 'One', cols: 1, rows: 1, color: 'lightblue'},
-  //   {text: 'Two', cols: 1, rows: 1, color: 'lightgreen'},
-  //   {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-  //   {text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
-  //   {text: 'Five', cols: 1, rows: 1, color: '#DDBDF1'},
-  //   {text: 'Six', cols: 1, rows: 1, color: '#DDBDF1'},
-  //   {text: 'Seven', cols: 2, rows: 1, color: '#DDBDF1'}
-  // ];
-
-
-
-
-  // colorControl = new FormControl('warn' as ThemePalette);
-
 
   today: any;
   fromDate: any;
@@ -56,7 +31,8 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
   transactionNumber: any;
 
   constructor(private fb: FormBuilder,
-              private dailyService: DailyPriceService) {
+              private dailyService: DailyPriceService,
+              public dialog: MatDialog) {
     super();
   }
 
@@ -75,6 +51,7 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
       // ToD: new FormControl('1401/01/09'),
     })
   }
+
 
   override clearFilter() {
     super.clearFilter(new FilterDailyPrice())
@@ -114,6 +91,18 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
     const _date = date?.toString().substr(0, 4) + "-" + date?.toString().substr(4, 2) + "-" + date?.toString().substr(6, 2);
     return _date
   }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(MatAlertComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: {
+        message: 'Are you sure to cancel without saving the data?',
+      },
+    });
+  }
+
 
 
 }
