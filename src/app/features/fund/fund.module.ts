@@ -13,28 +13,34 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatInputModule} from "@angular/material/input";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatDatepickerModule} from "@angular/material/datepicker";
+import { ExplanationFunComponent } from './components/explanation-fun/explanation-fun.component';
+import { JsonFundComponent } from './components/json-fund/json-fund.component';
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
   declarations: [
     ContainerComponent,
     FundTableComponent,
-    LayotedComponent
+    LayotedComponent,
+    ExplanationFunComponent,
+    JsonFundComponent
   ],
-  imports: [
-    CommonModule,
-    FundRoutingModule,
-    ShareModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatInputModule,
-    MatExpansionModule,
-    MatDatepickerModule
-  ],
+    imports: [
+        CommonModule,
+        FundRoutingModule,
+        ShareModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatInputModule,
+        MatExpansionModule,
+        MatDatepickerModule,
+        MatCardModule
+    ],
   exports: [
     LayotedComponent
   ],

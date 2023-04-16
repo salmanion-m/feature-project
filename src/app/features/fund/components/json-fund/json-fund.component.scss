@@ -1,0 +1,44 @@
+.card, .card2 {
+  direction: ltr;
+  border: 2px solid #74788d;
+  border-radius: 15px;
+  //  box-shadow: 10px 10px 10px 10px rgba(145, 144, 144, 0.15),
+  //  10px 10px 10px 10px rgba(136, 132, 132, 0.15),
+  //  10px 10px 10px 10px rgba(159, 159, 159, 0.15);
+}
+
+.card2 {
+  margin: 15px;
+  border: 3px solid #74788d;
+  border-radius: 29px;
+  &:hover {
+    box-shadow: 10px 10px 10px 10px rgba(145, 144, 144, 0.15),
+    10px 10px 10px 10px rgba(136, 132, 132, 0.15),
+    10px 10px 10px 10px rgba(159, 159, 159, 0.15);
+
+  }
+}
+
+.table-item, .items {
+  //border-style: 1px solid;
+  //width: 50rem;
+  //width: 50rem;
+  //height: 20rem;
+  //scroll-behavior: inherit;
+  //overflow-y: scroll;
+  text-align: left;
+  direction: ltr;
+  padding: 10px;
+}
+
+.items {
+  //width: 60rem;
+  height: 30rem;
+  background-color: #ffffff;
+  color: #6E85B7;
+  //font-size: 10px;
+  //font-weight: bold;
+}
+
+
+
