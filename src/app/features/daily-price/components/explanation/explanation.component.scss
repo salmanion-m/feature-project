@@ -1,0 +1,26 @@
+//.mat-card:not([class*=mat-elevation-z]) {
+//  box-shadow: 0 10px 1px -1px rgba(0,0,0,1),
+//  0 10px 1px 0 rgba(0,0,0,1),
+//  0 1px 3px 0 rgba(0,0,0,1);
+//}
+
+.card , .card2{
+  border: 1px solid #74788d;
+  box-shadow: 10px 10px 10px 10px rgba(145, 144, 144, 0.15),
+  10px 10px 10px 10px rgba(136, 132, 132, 0.15),
+  10px 10px 10px 10px rgba(159, 159, 159, 0.15);
+}
+
+.text-line{
+  font-size: larger;
+  font-weight: bold;
+  font-family: Tanha;
+  padding: 15px;
+}
+
+.card2{
+  padding: 10px;
+  border: 2px solid #74788d;
+  margin: 0px 30px 38px 30px;
+}
+

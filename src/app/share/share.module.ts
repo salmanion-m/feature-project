@@ -30,6 +30,7 @@ import {CdkMenuModule} from "@angular/cdk/menu";
 import {OverlayModule} from "@angular/cdk/overlay";
 import { BodyComponent } from './components/body/body.component';
 import {AppService} from "./services";
+import {PrettyJsonPipe} from "./pipes";
 
 
 
@@ -47,7 +48,7 @@ import {AppService} from "./services";
     SublevelMenuComponent,
     HeaderrComponent,
     BodyComponent,
-
+    PrettyJsonPipe,
   ],
   exports: [
     LayoutComponent,
@@ -56,6 +57,7 @@ import {AppService} from "./services";
     PageHeaderComponent,
     SidenavComponent,
     HeaderrComponent,
+    PrettyJsonPipe
   ],
   imports: [
     CommonModule,

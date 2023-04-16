@@ -55,22 +55,3 @@ dp-date-picker {
   margin: 10px;
 }
 
-.example-button-container {
-  //display: flex;
-  justify-content: center;
-  width: 5px;
-  margin-left: 4px;
-  top: 19px;
-}
-
-.mat-icon {
-  margin-right: -12px;
-}
-
-//baraye az beyn bordan khate dore dokme
-button:focus{
-  outline: none;
-  &:hover{
-    background-color: transparent;
-  }
-}

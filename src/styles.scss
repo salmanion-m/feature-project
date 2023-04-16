@@ -33,6 +33,39 @@ html, body {
   //overflow: hidden;
 }
 
+
+pre {
+  font-weight: 400;
+  font-size: medium;
+
+  .number-line {
+    color: #4754a1;
+  }
+  .string {
+    //color: #9ecc09;
+    //color: rgba(65, 100, 74, 0.82);
+    color: #247881;
+  }
+  .number {
+    //color: #e3a917;
+    color: #E90064;
+  }
+  .boolean {
+    //color: #0097f1;
+    //color: #614c65;
+    color: #b2812b;
+  }
+  .null {
+    //color: #727990;
+    color: #569DAA;
+  }
+  .key {
+    //color: rgba(28, 114, 173, 0.84);
+    color: rgba(134, 58, 111, 0.87)
+  }
+}
+
+
 body {
   //margin: 0;
   position: relative;

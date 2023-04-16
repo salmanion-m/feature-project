@@ -2,7 +2,14 @@ import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DailyPriceRoutingModule } from './daily-price-routing.module';
-import { ContainerComponent, DailyPriceComponent, LineChartDailyPriceComponent, SplineChartComponent} from "./components";
+import {
+  ApiJsonComponent,
+  ContainerComponent,
+  DailyPriceComponent,
+  ExplanationComponent,
+  LineChartDailyPriceComponent,
+  SplineChartComponent
+} from "./components";
 import {FilterDailyPriceComponent} from "./components/daily-price";
 import {ShareModule} from "../../share/share.module";
 import {MatTableModule} from "@angular/material/table";
@@ -20,12 +27,14 @@ import {MatDividerModule} from "@angular/material/divider";
 import {FundModule} from "../fund/fund.module";
 import {MatSelectModule} from "@angular/material/select";
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatCardModule} from "@angular/material/card";
+import {HttpClientModule} from "@angular/common/http";
+import {NgxJsonViewerModule} from "ngx-json-viewer";
 
 
 
 
 
-// @ts-ignore
 @NgModule({
   declarations: [
     ContainerComponent,
@@ -33,28 +42,33 @@ import {MatDialogModule} from "@angular/material/dialog";
     FilterDailyPriceComponent,
     LineChartDailyPriceComponent,
     SplineChartComponent,
+    ExplanationComponent,
+    ApiJsonComponent,
   ],
-    imports: [
-        CommonModule,
-        DailyPriceRoutingModule,
-        ShareModule,
-        MatTableModule,
-        MatPaginatorModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatIconModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        DpDatePickerModule,
-        HighchartsChartModule,
-        MatDividerModule,
-        FundModule,
-        MatSelectModule,
-        FormsModule,
-        MatDialogModule,
-    ],
+  imports: [
+    CommonModule,
+    DailyPriceRoutingModule,
+    ShareModule,
+    MatTableModule,
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    DpDatePickerModule,
+    HighchartsChartModule,
+    MatDividerModule,
+    FundModule,
+    MatSelectModule,
+    FormsModule,
+    MatDialogModule,
+    MatCardModule,
+    HttpClientModule,
+    NgxJsonViewerModule
+  ],
   schemas: [ NO_ERRORS_SCHEMA  ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'fa-IR'},

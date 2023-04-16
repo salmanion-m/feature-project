@@ -3,13 +3,9 @@ import {FilterTableComponent} from "../../../../../share";
 import {FilterDailyPrice} from "../../../models";
 import {FormBuilder, FormControl} from "@angular/forms";
 import {DailyPriceService} from "../../../services";
-import * as moment from 'jalali-moment';
+import moment from 'jalali-moment';
 import {IDatePickerConfig} from "ng2-jalali-date-picker";
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 
-/**
- * @title Dialog Animations
- */
 
 @Component({
   selector: 'app-filter-daily-price',
@@ -33,9 +29,7 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
   transactionNumber: any;
 
   constructor(private fb: FormBuilder,
-              private dailyService: DailyPriceService,
-              public dialog: MatDialog,
-              ) {
+              private dailyService: DailyPriceService) {
     super();
   }
 
@@ -95,16 +89,7 @@ export class FilterDailyPriceComponent extends FilterTableComponent<FilterDailyP
     return _date
   }
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(FilterDailyPriceComponent, {
-      width: '250px',
-      enterAnimationDuration,
-      exitAnimationDuration,
-      data: {
-        message: 'Are you sure to cancel without saving the data?',
-      },
-    });
-  }
+
 
 
 
