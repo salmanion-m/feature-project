@@ -2,7 +2,13 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {FundRoutingModule} from './fund-routing.module';
-import {ContainerComponent, FundTableComponent, LayotedComponent} from "./components";
+import {
+  ContainerComponent,
+  ExplanationFunComponent,
+  FundTableComponent,
+  JsonFundComponent,
+  LayotedComponent
+} from "./components";
 import {ShareModule} from "../../share/share.module";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
@@ -13,8 +19,6 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatInputModule} from "@angular/material/input";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import { ExplanationFunComponent } from './components/explanation-fun/explanation-fun.component';
-import { JsonFundComponent } from './components/json-fund/json-fund.component';
 import {MatCardModule} from "@angular/material/card";
 
 
@@ -42,7 +46,8 @@ import {MatCardModule} from "@angular/material/card";
         MatCardModule
     ],
   exports: [
-    LayotedComponent
+    LayotedComponent,
+    ExplanationFunComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
