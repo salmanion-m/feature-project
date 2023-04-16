@@ -13,22 +13,25 @@ import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
-  declarations: [
-    ContainerComponent,
-    InstrumentTableComponent,
-    JsonInstComponent,
-    ExplanationInstComponent
-  ],
-  imports: [
-    CommonModule,
-    InstrumentRoutingModule,
-    ShareModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    MatSortModule,
-    MatCardModule,
+    declarations: [
+        ContainerComponent,
+        InstrumentTableComponent,
+        JsonInstComponent,
+        ExplanationInstComponent
+    ],
+    exports: [
+        ExplanationInstComponent
+    ],
+    imports: [
+        CommonModule,
+        InstrumentRoutingModule,
+        ShareModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatFormFieldModule,
+        MatSortModule,
+        MatCardModule,
 
-  ]
+    ]
 })
 export class InstrumentModule { }

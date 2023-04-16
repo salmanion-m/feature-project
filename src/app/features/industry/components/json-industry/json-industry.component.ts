@@ -1,4 +1,4 @@
-import {Component, ElementRef} from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {JsonIndustryService} from "../../services";
 
 @Component({
@@ -6,7 +6,7 @@ import {JsonIndustryService} from "../../services";
   templateUrl: './json-industry.component.html',
   styleUrls: ['./json-industry.component.scss']
 })
-export class JsonIndustryComponent {
+export class JsonIndustryComponent implements OnInit{
 
   posts: any[] = [];
 
